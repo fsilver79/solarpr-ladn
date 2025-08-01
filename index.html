@@ -1,1143 +1,596 @@
 <!DOCTYPE html>
-
 <html lang="es">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>SolarPowerPR - Energía Solar para Puerto Rico</title>
-
+    <title>SolarPR - Energía Solar para Puerto Rico</title>
     <script src="https://cdn.tailwindcss.com"></script>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <script>
-
         tailwind.config = {
-
             theme: {
-
                 extend: {
-
                     colors: {
-
                         'sky-blue': '#4AA5DE',
-
                         'sky-dark': '#2980B9',
-
                         'accent-green': '#2ECC71',
-
                         'accent-yellow': '#F1C40F',
-
                     },
-
                     fontFamily: {
-
                         'sans': ['Montserrat', 'sans-serif'],
-
                     },
-
                 }
-
             }
-
         }
-
     </script>
-
     <style>
-
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
-
-       
-
+        
         html {
-
             scroll-behavior: smooth;
-
         }
-
-       
-
+        
         .hero-pattern {
-
             background-color: #4AA5DE;
-
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-
         }
-
-       
-
+        
         .testimonial-card {
-
             transition: transform 0.3s ease;
-
         }
-
-       
-
+        
         .testimonial-card:hover {
-
             transform: translateY(-5px);
-
         }
-
-       
-
+        
         .floating {
-
             animation: float 3s ease-in-out infinite;
-
         }
-
-       
-
+        
         @keyframes float {
-
             0% { transform: translateY(0px); }
-
             50% { transform: translateY(-10px); }
-
             100% { transform: translateY(0px); }
-
         }
-
-       
-
+        
         .pulse {
-
             animation: pulse 2s infinite;
-
         }
-
-       
-
+        
         @keyframes pulse {
-
             0% { transform: scale(1); }
-
             50% { transform: scale(1.05); }
-
             100% { transform: scale(1); }
-
         }
-
     </style>
-
 </head>
-
 <body class="font-sans text-gray-800 bg-gray-50">
-
     <!-- Barra de navegación -->
-
     <nav class="bg-white shadow-md fixed w-full z-50">
-
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-
             <div class="flex items-center">
-
                 <svg class="h-10 w-10 text-sky-blue" fill="currentColor" viewBox="0 0 24 24">
-
                     <path d="M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0 c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2 c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1 S11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0 s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06 c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41 c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36 c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/>
-
                 </svg>
-
                 <span class="ml-2 text-xl font-bold text-sky-blue">SolarPR</span>
-
             </div>
-
             <div class="hidden md:flex space-x-8">
-
                 <a href="#beneficios" class="text-gray-600 hover:text-sky-blue transition">Beneficios</a>
-
                 <a href="#proceso" class="text-gray-600 hover:text-sky-blue transition">Proceso</a>
-
                 <a href="#testimonios" class="text-gray-600 hover:text-sky-blue transition">Testimonios</a>
-
                 <a href="#contacto" class="text-gray-600 hover:text-sky-blue transition">Contacto</a>
-
             </div>
-
             <div>
-
                 <a href="#contacto" class="bg-accent-green hover:bg-green-600 text-white font-medium py-2 px-4 rounded-lg transition duration-300 shadow-md">
-
                     Evaluación Gratis
-
                 </a>
-
             </div>
-
         </div>
-
     </nav>
 
- 
-
     <!-- Hero Section -->
-
     <header class="pt-24 pb-16 hero-pattern">
-
         <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
-
             <div class="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
-
                 <h1 class="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
-
                     ¡Libérate de los apagones y las facturas abusivas para siempre!
-
                 </h1>
-
                 <p class="text-xl text-white opacity-90 mb-8">
-
                     Únete a miles de puertorriqueños que ya disfrutan de energía limpia, confiable y económica.
-
                 </p>
-
                 <div class="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
-
                     <a href="#contacto" class="bg-white text-sky-blue hover:bg-gray-100 font-bold py-3 px-6 rounded-lg transition duration-300 shadow-lg pulse">
-
                         Solicita tu evaluación gratis
-
                     </a>
-
                     <a href="#proceso" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-sky-blue font-bold py-3 px-6 rounded-lg transition duration-300">
-
                         Conoce más
-
                     </a>
-
                 </div>
-
             </div>
-
             <div class="md:w-1/2 flex justify-center">
-
                 <div class="relative">
-
                     <svg class="w-full max-w-lg floating" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-
                         <path fill="#FFFFFF" d="M48.8,-46.1C63.9,-33.5,77.5,-16.7,77.9,0.4C78.3,17.5,65.6,35,49.9,47.7C34.2,60.4,15.5,68.3,-1.9,70.2C-19.3,72.1,-38.6,68,-52.1,55.4C-65.6,42.9,-73.3,21.4,-72.8,0.5C-72.3,-20.5,-63.6,-41,-49.1,-53.6C-34.6,-66.2,-14.3,-70.9,1.2,-72.1C16.7,-73.3,33.7,-58.8,48.8,-46.1Z" transform="translate(100 100)" />
-
                     </svg>
-
                     <div class="absolute inset-0 flex items-center justify-center">
-
                         <svg class="w-3/4 h-3/4" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-
                             <path d="M256 0C114.615 0 0 114.615 0 256C0 397.385 114.615 512 256 512C397.385 512 512 397.385 512 256C512 114.615 397.385 0 256 0ZM256 64C273.673 64 288 78.327 288 96C288 113.673 273.673 128 256 128C238.327 128 224 113.673 224 96C224 78.327 238.327 64 256 64ZM384 192C384 209.673 369.673 224 352 224C334.327 224 320 209.673 320 192C320 174.327 334.327 160 352 160C369.673 160 384 174.327 384 192ZM160 192C160 174.327 174.327 160 192 160C209.673 160 224 174.327 224 192C224 209.673 209.673 224 192 224C174.327 224 160 209.673 160 192ZM256 448C238.327 448 224 433.673 224 416C224 398.327 238.327 384 256 384C273.673 384 288 398.327 288 416C288 433.673 273.673 448 256 448ZM352 352C334.327 352 320 337.673 320 320C320 302.327 334.327 288 352 288C369.673 288 384 302.327 384 320C384 337.673 369.673 352 352 352ZM160 320C160 302.327 174.327 288 192 288C209.673 288 224 302.327 224 320C224 337.673 209.673 352 192 352C174.327 352 160 337.673 160 320Z" fill="#4AA5DE"/>
-
                             <path d="M256 160V352M256 160L352 224M256 160L160 224M256 352L352 288M256 352L160 288" stroke="#2980B9" stroke-width="16" stroke-linecap="round"/>
-
                         </svg>
-
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </header>
 
- 
-
     <!-- Formulario de contacto flotante (visible en móvil) -->
-
     <div class="md:hidden bg-white rounded-t-lg shadow-lg fixed bottom-0 left-0 right-0 z-40 border-t-4 border-sky-blue">
-
         <div class="p-4">
-
             <h3 class="text-lg font-bold text-sky-blue mb-2">¡Solicita tu evaluación gratis!</h3>
-
             <form id="mobile-form" action="https://formspree.io/f/xeozzdoe" method="POST" class="space-y-3">
-
                 <input type="text" name="nombre" placeholder="Nombre completo" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-blue" required>
-
                 <input type="tel" name="telefono" placeholder="Teléfono" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-blue" required>
-
+                <input type="email" name="email" placeholder="Email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-blue" required>
                 <button type="submit" class="w-full bg-accent-green hover:bg-green-600 text-white font-medium py-2 px-4 rounded-lg transition duration-300">
-
                     Califica ahora
-
                 </button>
-
             </form>
-
         </div>
-
     </div>
 
- 
-
     <!-- Beneficios -->
-
     <section id="beneficios" class="py-16 bg-white">
-
         <div class="container mx-auto px-4">
-
             <div class="text-center mb-12">
-
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Beneficios de la energía solar</h2>
-
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">Descubre por qué miles de puertorriqueños están cambiando a energía solar</p>
-
             </div>
-
-           
-
+            
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
                 <!-- Beneficio 1 -->
-
                 <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition duration-300 border-t-4 border-sky-blue">
-
                     <div class="text-sky-blue text-4xl mb-4">
-
                         <i class="fas fa-dollar-sign"></i>
-
                     </div>
-
                     <h3 class="text-xl font-bold mb-2">Sin pagos por 6 meses</h3>
-
                     <p class="text-gray-600">Comienza a ahorrar desde el primer día sin tener que hacer pagos durante los primeros 6 meses.</p>
-
                 </div>
-
-               
-
+                
                 <!-- Beneficio 2 -->
-
                 <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition duration-300 border-t-4 border-accent-green">
-
                     <div class="text-accent-green text-4xl mb-4">
-
                         <i class="fas fa-gift"></i>
-
                     </div>
-
                     <h3 class="text-xl font-bold mb-2">$1,200 en incentivos</h3>
-
                     <p class="text-gray-600">Aprovecha los incentivos federales y locales que pueden sumar hasta $1,200 en ahorros adicionales.</p>
-
                 </div>
-
-               
-
+                
                 <!-- Beneficio 3 -->
-
                 <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition duration-300 border-t-4 border-accent-yellow">
-
                     <div class="text-accent-yellow text-4xl mb-4">
-
                         <i class="fas fa-bolt"></i>
-
                     </div>
-
                     <h3 class="text-xl font-bold mb-2">Instalación en 30 días</h3>
-
                     <p class="text-gray-600">Nuestro equipo profesional completa todo el proceso de instalación en menos de 30 días.</p>
-
                 </div>
-
-               
-
+                
                 <!-- Beneficio 4 -->
-
                 <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition duration-300 border-t-4 border-sky-blue">
-
                     <div class="text-sky-blue text-4xl mb-4">
-
                         <i class="fas fa-shield-alt"></i>
-
                     </div>
-
                     <h3 class="text-xl font-bold mb-2">Garantía de 25 años</h3>
-
                     <p class="text-gray-600">Todos nuestros sistemas incluyen una garantía completa de 25 años en equipos y rendimiento.</p>
-
                 </div>
-
-               
-
+                
                 <!-- Beneficio 5 -->
-
                 <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition duration-300 border-t-4 border-accent-green">
-
                     <div class="text-accent-green text-4xl mb-4">
-
                         <i class="fas fa-leaf"></i>
-
                     </div>
-
                     <h3 class="text-xl font-bold mb-2">Energía limpia</h3>
-
                     <p class="text-gray-600">Reduce tu huella de carbono y contribuye a un Puerto Rico más sostenible y ecológico.</p>
-
                 </div>
-
-               
-
+                
                 <!-- Beneficio 6 -->
-
                 <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition duration-300 border-t-4 border-accent-yellow">
-
                     <div class="text-accent-yellow text-4xl mb-4">
-
                         <i class="fas fa-home"></i>
-
                     </div>
-
                     <h3 class="text-xl font-bold mb-2">Aumenta el valor de tu propiedad</h3>
-
                     <p class="text-gray-600">Las propiedades con sistemas solares tienen un valor de mercado hasta un 4.1% mayor.</p>
-
                 </div>
-
             </div>
-
-           
-
+            
             <div class="text-center mt-12">
-
                 <a href="#contacto" class="inline-block bg-sky-blue hover:bg-sky-dark text-white font-bold py-3 px-8 rounded-lg transition duration-300 shadow-md">
-
                     ¡Quiero estos beneficios!
-
                 </a>
-
             </div>
-
         </div>
-
     </section>
-
- 
 
     <!-- Proceso -->
-
     <section id="proceso" class="py-16 bg-gray-50">
-
         <div class="container mx-auto px-4">
-
             <div class="text-center mb-12">
-
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Proceso simple y sin complicaciones</h2>
-
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">Te acompañamos en cada paso del camino hacia la independencia energética</p>
-
             </div>
-
-           
-
+            
             <div class="max-w-4xl mx-auto">
-
                 <!-- Paso 1 -->
-
                 <div class="flex flex-col md:flex-row items-center mb-12">
-
                     <div class="md:w-1/4 flex justify-center mb-6 md:mb-0">
-
                         <div class="w-20 h-20 bg-sky-blue rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg">
-
                             1
-
                         </div>
-
                     </div>
-
                     <div class="md:w-3/4">
-
                         <h3 class="text-2xl font-bold mb-2">Evaluación gratuita</h3>
-
                         <p class="text-gray-600">Nuestros expertos analizan tu consumo eléctrico y el espacio disponible para diseñar el sistema ideal para tu hogar o negocio.</p>
-
                     </div>
-
                 </div>
-
-               
-
+                
                 <!-- Paso 2 -->
-
                 <div class="flex flex-col md:flex-row items-center mb-12">
-
                     <div class="md:w-1/4 flex justify-center mb-6 md:mb-0">
-
                         <div class="w-20 h-20 bg-sky-blue rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg">
-
                             2
-
                         </div>
-
                     </div>
-
                     <div class="md:w-3/4">
-
                         <h3 class="text-2xl font-bold mb-2">Propuesta personalizada</h3>
-
                         <p class="text-gray-600">Recibirás una propuesta detallada con el diseño del sistema, costos, financiamiento disponible y proyección de ahorros.</p>
-
                     </div>
-
                 </div>
-
-               
-
+                
                 <!-- Paso 3 -->
-
                 <div class="flex flex-col md:flex-row items-center mb-12">
-
                     <div class="md:w-1/4 flex justify-center mb-6 md:mb-0">
-
                         <div class="w-20 h-20 bg-sky-blue rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg">
-
                             3
-
                         </div>
-
                     </div>
-
                     <div class="md:w-3/4">
-
                         <h3 class="text-2xl font-bold mb-2">Instalación profesional</h3>
-
                         <p class="text-gray-600">Nuestro equipo certificado instala tu sistema con los más altos estándares de calidad y seguridad en menos de 30 días.</p>
-
                     </div>
-
                 </div>
-
-               
-
+                
                 <!-- Paso 4 -->
-
                 <div class="flex flex-col md:flex-row items-center">
-
                     <div class="md:w-1/4 flex justify-center mb-6 md:mb-0">
-
                         <div class="w-20 h-20 bg-sky-blue rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg">
-
                             4
-
                         </div>
-
                     </div>
-
                     <div class="md:w-3/4">
-
                         <h3 class="text-2xl font-bold mb-2">¡Comienza a ahorrar!</h3>
-
                         <p class="text-gray-600">Disfruta de energía limpia y confiable mientras ves cómo se reducen drásticamente tus facturas de electricidad.</p>
-
                     </div>
-
                 </div>
-
             </div>
-
-           
-
+            
             <div class="text-center mt-12">
-
                 <a href="#contacto" class="inline-block bg-accent-green hover:bg-green-600 text-white font-bold py-3 px-8 rounded-lg transition duration-300 shadow-md">
-
                     Comienza hoy mismo
-
                 </a>
-
             </div>
-
         </div>
-
     </section>
-
- 
 
     <!-- Testimonios -->
-
     <section id="testimonios" class="py-16 bg-white">
-
         <div class="container mx-auto px-4">
-
             <div class="text-center mb-12">
-
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Lo que dicen nuestros clientes</h2>
-
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">Más de 500 familias y negocios en Puerto Rico ya disfrutan de los beneficios de la energía solar</p>
-
             </div>
-
-           
-
+            
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
                 <!-- Testimonio 1 (Actualizado) -->
-
                 <div class="testimonial-card bg-gray-50 rounded-xl p-6 shadow-md">
-
                     <div class="flex items-center mb-4">
-
                         <div class="w-12 h-12 bg-sky-blue rounded-full flex items-center justify-center text-white font-bold text-xl">
-
                             CV
-
                         </div>
-
                         <div class="ml-4">
-
                             <h4 class="font-bold">Carmen Vázquez</h4>
-
                             <p class="text-gray-500 text-sm">Carolina</p>
-
                         </div>
-
                     </div>
-
                     <div class="mb-4 text-yellow-400">
-
                         <i class="fas fa-star"></i>
-
                         <i class="fas fa-star"></i>
-
                         <i class="fas fa-star"></i>
-
                         <i class="fas fa-star"></i>
-
                         <i class="fas fa-star"></i>
-
                     </div>
-
                     <p class="text-gray-600 italic">"¡Increíble lo rápido y perfecto que fue todo el proceso! El equipo técnico fue muy profesional y dejaron todo impecable. Estoy encantada con el resultado y la calidad del servicio."</p>
-
                 </div>
-
-               
-
+                
                 <!-- Testimonio 2 -->
-
                 <div class="testimonial-card bg-gray-50 rounded-xl p-6 shadow-md">
-
                     <div class="flex items-center mb-4">
-
                         <div class="w-12 h-12 bg-accent-green rounded-full flex items-center justify-center text-white font-bold text-xl">
-
                             LC
-
                         </div>
-
                         <div class="ml-4">
-
                             <h4 class="font-bold">Laura Colón</h4>
-
                             <p class="text-gray-500 text-sm">Ponce</p>
-
                         </div>
-
                     </div>
-
                     <div class="mb-4 text-yellow-400">
-
                         <i class="fas fa-star"></i>
-
                         <i class="fas fa-star"></i>
-
                         <i class="fas fa-star"></i>
-
                         <i class="fas fa-star"></i>
-
                         <i class="fas fa-star"></i>
-
                     </div>
-
                     <p class="text-gray-600 italic">"Lo mejor fue la tranquilidad durante los apagones. Mientras mis vecinos estaban sin luz, nosotros seguíamos con energía gracias a nuestro sistema solar con baterías."</p>
-
                 </div>
-
-               
-
+                
                 <!-- Testimonio 3 -->
-
                 <div class="testimonial-card bg-gray-50 rounded-xl p-6 shadow-md">
-
                     <div class="flex items-center mb-4">
-
                         <div class="w-12 h-12 bg-accent-yellow rounded-full flex items-center justify-center text-white font-bold text-xl">
-
                             JM
-
                         </div>
-
                         <div class="ml-4">
-
                             <h4 class="font-bold">José Martínez</h4>
-
                             <p class="text-gray-500 text-sm">Mayagüez</p>
-
                         </div>
-
                     </div>
-
                     <div class="mb-4 text-yellow-400">
-
                         <i class="fas fa-star"></i>
-
                         <i class="fas fa-star"></i>
-
                         <i class="fas fa-star"></i>
-
                         <i class="fas fa-star"></i>
-
                         <i class="fas fa-star-half-alt"></i>
-
                     </div>
-
                     <p class="text-gray-600 italic">"Para mi negocio, la energía solar ha sido una inversión excelente. Redujimos costos operativos y además nos posicionamos como una empresa comprometida con el medio ambiente."</p>
-
                 </div>
-
             </div>
-
         </div>
-
     </section>
-
- 
 
     <!-- Contacto -->
-
     <section id="contacto" class="py-16 bg-sky-blue">
-
         <div class="container mx-auto px-4">
-
             <div class="bg-white rounded-xl shadow-xl overflow-hidden">
-
                 <div class="flex flex-col md:flex-row">
-
                     <!-- Formulario -->
-
                     <div class="md:w-1/2 p-8">
-
                         <h2 class="text-3xl font-bold mb-2">¡Solicita tu evaluación gratis!</h2>
-
                         <p class="text-gray-600 mb-6">Completa el formulario y un especialista te contactará en menos de 24 horas.</p>
-
-                       
-
-                        <form id="contact-form" action=" https://formspree.io/f/xeozzdoe" method="POST" class="space-y-4">
-
+                        
+                        <form id="contact-form" action="https://formspree.io/f/xeozzdoe" method="POST" class="space-y-4">
                             <div>
-
                                 <label class="block text-gray-700 mb-2" for="nombre">Nombre completo</label>
-
                                 <input type="text" id="nombre" name="nombre" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-blue" required>
-
                             </div>
-
-                           
-
+                            
                             <div>
-
                                 <label class="block text-gray-700 mb-2" for="telefono">Teléfono</label>
-
                                 <input type="tel" id="telefono" name="telefono" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-blue" required>
-
                             </div>
-
-                           
-
+                            
                             <div>
-
                                 <label class="block text-gray-700 mb-2" for="email">Correo electrónico</label>
-
                                 <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-blue" required>
-
                             </div>
-
-                           
-
+                            
                             <div>
-
-                                <label class="block text-gray-700 mb-2" for="direccion">Dirección</label>
-
-                                <input type="text" id="direccion" name="direccion" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-blue" required>
-
+                                <label class="block text-gray-700 mb-2">Puntuación de crédito aproximada</label>
+                                <div class="flex space-x-4">
+                                    <div class="flex items-center">
+                                        <input type="radio" id="credito680" name="credito" value="680" class="mr-2" required>
+                                        <label for="credito680">680</label>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input type="radio" id="credito680mas" name="credito" value="680 o más" class="mr-2">
+                                        <label for="credito680mas">680 o más</label>
+                                    </div>
+                                </div>
                             </div>
-
-                           
-
+                            
                             <div>
-
-                                <label class="block text-gray-700 mb-2" for="factura">Factura mensual promedio ($)</label>
-
-                                <input type="number" id="factura" name="factura" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-blue">
-
+                                <label class="block text-gray-700 mb-2">¿Casa Propia?</label>
+                                <div class="flex space-x-4">
+                                    <div class="flex items-center">
+                                        <input type="radio" id="casaSi" name="casa" value="Sí" class="mr-2" required>
+                                        <label for="casaSi">Sí</label>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input type="radio" id="casaNo" name="casa" value="No" class="mr-2">
+                                        <label for="casaNo">No</label>
+                                    </div>
+                                </div>
                             </div>
-
-                           
-
+                            
+                            <div>
+                                <label class="block text-gray-700 mb-2" for="factura">¿De cuánto fue su última factura de Luma?</label>
+                                <input type="text" id="factura" name="factura" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-blue" required>
+                            </div>
+                            
                             <button type="submit" class="w-full bg-accent-green hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 shadow-md">
-
                                 Califica ahora
-
                             </button>
-
                         </form>
-
                     </div>
-
-                   
-
+                    
                     <!-- Información de contacto -->
-
                     <div class="md:w-1/2 bg-gray-50 p-8 flex flex-col justify-between">
-
                         <div>
-
                             <h3 class="text-2xl font-bold mb-6">Información de contacto</h3>
-
-                           
-
+                            
                             <div class="space-y-4">
-
                                 <div class="flex items-start">
-
                                     <div class="text-sky-blue text-xl mr-4">
-
                                         <i class="fas fa-map-marker-alt"></i>
-
                                     </div>
-
                                     <div>
-
                                         <h4 class="font-bold">Dirección</h4>
-
                                         <p class="text-gray-600">Calle Sol #123, San Juan, PR 00901</p>
-
                                     </div>
-
                                 </div>
-
-                               
-
+                                
                                 <div class="flex items-start">
-
                                     <div class="text-sky-blue text-xl mr-4">
-
                                         <i class="fas fa-phone"></i>
-
                                     </div>
-
                                     <div>
-
                                         <h4 class="font-bold">Teléfono</h4>
-
                                         <p class="text-gray-600">(787) 507-0107</p>
-
                                     </div>
-
                                 </div>
-
-                               
-
+                                
                                 <div class="flex items-start">
-
                                     <div class="text-sky-blue text-xl mr-4">
-
                                         <i class="fas fa-envelope"></i>
-
                                     </div>
-
                                     <div>
-
                                         <h4 class="font-bold">Correo electrónico</h4>
-
                                         <p class="text-gray-600">felix.silvestrini@prosolarpr.com</p>
-
                                     </div>
-
                                 </div>
-
-                               
-
+                                
                                 <div class="flex items-start">
-
                                     <div class="text-sky-blue text-xl mr-4">
-
                                         <i class="fas fa-clock"></i>
-
                                     </div>
-
                                     <div>
-
                                         <h4 class="font-bold">Horario</h4>
-
                                         <p class="text-gray-600">Lunes a Viernes: 8:00 AM - 6:00 PM<br>Sábados: 9:00 AM - 1:00 PM</p>
-
                                     </div>
-
                                 </div>
-
                             </div>
-
                         </div>
-
-                       
-
+                        
                         <div class="mt-8">
-
                             <h4 class="font-bold mb-4">Contáctanos por WhatsApp</h4>
-
                             <a href="https://wa.me/17875070107" class="flex items-center bg-green-500 hover:bg-green-600 text-white font-medium py-3 px-6 rounded-lg transition duration-300 shadow-md w-fit">
-
                                 <i class="fab fa-whatsapp text-xl mr-2"></i>
-
                                 Enviar mensaje
-
                             </a>
-
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </section>
 
- 
-
     <!-- Footer -->
-
     <footer class="bg-gray-800 text-white py-12">
-
         <div class="container mx-auto px-4">
-
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-
                 <!-- Logo y descripción -->
-
                 <div class="md:col-span-1">
-
                     <div class="flex items-center mb-4">
-
                         <svg class="h-8 w-8 text-sky-blue" fill="currentColor" viewBox="0 0 24 24">
-
                             <path d="M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0 c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2 c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1 S11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0 s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06 c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41 c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36 c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/>
-
                         </svg>
-
                         <span class="ml-2 text-xl font-bold text-sky-blue">SolarPR</span>
-
                     </div>
-
                     <p class="text-gray-400 mb-4">Transformando Puerto Rico con energía limpia, confiable y económica desde 2015.</p>
-
                     <div class="flex space-x-4">
-
                         <a href="#" class="text-gray-400 hover:text-sky-blue transition">
-
                             <i class="fab fa-facebook-f"></i>
-
                         </a>
-
                         <a href="#" class="text-gray-400 hover:text-sky-blue transition">
-
                             <i class="fab fa-instagram"></i>
-
                         </a>
-
                         <a href="#" class="text-gray-400 hover:text-sky-blue transition">
-
                             <i class="fab fa-twitter"></i>
-
                         </a>
-
                         <a href="#" class="text-gray-400 hover:text-sky-blue transition">
-
                             <i class="fab fa-linkedin-in"></i>
-
                         </a>
-
                     </div>
-
                 </div>
-
-               
-
+                
                 <!-- Enlaces rápidos -->
-
                 <div class="md:col-span-1">
-
                     <h4 class="text-lg font-bold mb-4">Enlaces rápidos</h4>
-
                     <ul class="space-y-2">
-
                         <li><a href="#" class="text-gray-400 hover:text-sky-blue transition">Inicio</a></li>
-
                         <li><a href="#beneficios" class="text-gray-400 hover:text-sky-blue transition">Beneficios</a></li>
-
                         <li><a href="#proceso" class="text-gray-400 hover:text-sky-blue transition">Proceso</a></li>
-
                         <li><a href="#testimonios" class="text-gray-400 hover:text-sky-blue transition">Testimonios</a></li>
-
                         <li><a href="#contacto" class="text-gray-400 hover:text-sky-blue transition">Contacto</a></li>
-
                     </ul>
-
                 </div>
-
-               
-
+                
                 <!-- Servicios -->
-
                 <div class="md:col-span-1">
-
                     <h4 class="text-lg font-bold mb-4">Servicios</h4>
-
                     <ul class="space-y-2">
-
                         <li><a href="#" class="text-gray-400 hover:text-sky-blue transition">Sistemas residenciales</a></li>
-
                         <li><a href="#" class="text-gray-400 hover:text-sky-blue transition">Sistemas comerciales</a></li>
-
                         <li><a href="#" class="text-gray-400 hover:text-sky-blue transition">Baterías de respaldo</a></li>
-
                         <li><a href="#" class="text-gray-400 hover:text-sky-blue transition">Mantenimiento</a></li>
-
                         <li><a href="#" class="text-gray-400 hover:text-sky-blue transition">Financiamiento</a></li>
-
                     </ul>
-
                 </div>
-
-               
-
+                
                 <!-- Boletín -->
-
                 <div class="md:col-span-1">
-
                     <h4 class="text-lg font-bold mb-4">Boletín informativo</h4>
-
                     <p class="text-gray-400 mb-4">Suscríbete para recibir noticias y ofertas especiales.</p>
-
-                    <form action="https://formspree.io/f/xeqyqvzj" method="POST" class="space-y-2">
-
+                    <form action="https://formspree.io/f/xeozzdoe" method="POST" class="space-y-2">
                         <input type="email" name="email-boletin" placeholder="Tu correo electrónico" class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-sky-blue">
-
                         <button type="submit" class="w-full bg-sky-blue hover:bg-sky-dark text-white font-medium py-2 px-4 rounded-md transition duration-300">
-
                             Suscribirse
-
                         </button>
-
                     </form>
-
                 </div>
-
             </div>
-
-           
-
+            
             <div class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between">
-
                 <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2023 SolarPR. Todos los derechos reservados.</p>
-
                 <div class="flex space-x-4">
-
                     <a href="#" class="text-gray-400 hover:text-sky-blue transition text-sm">Política de privacidad</a>
-
                     <a href="#" class="text-gray-400 hover:text-sky-blue transition text-sm">Términos y condiciones</a>
-
                 </div>
-
             </div>
-
         </div>
-
     </footer>
 
- 
-
     <!-- WhatsApp flotante -->
-
     <a href="https://wa.me/17875070107" class="fixed bottom-20 right-6 z-50 bg-green-500 hover:bg-green-600 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg transition duration-300 md:bottom-6">
-
         <i class="fab fa-whatsapp text-2xl"></i>
-
     </a>
 
- 
-
     <!-- Scripts -->
-
     <script>
-
         // Navegación suave
-
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-
             anchor.addEventListener('click', function (e) {
-
                 e.preventDefault();
-
-               
-
+                
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
-
                     behavior: 'smooth'
-
                 });
-
             });
-
         });
-
-       
-
+        
         // Mensaje de confirmación después de enviar formulario
-
         document.getElementById('contact-form').addEventListener('submit', function(e) {
-
             // No prevenimos el envío del formulario para que Formspree lo procese
-
             // Solo mostramos un mensaje de confirmación
-
             setTimeout(function() {
-
                 alert('¡Gracias por tu interés! Un especialista se pondrá en contacto contigo en menos de 24 horas.');
-
             }, 500);
-
         });
-
-       
-
+        
         document.getElementById('mobile-form').addEventListener('submit', function(e) {
-
             // No prevenimos el envío del formulario para que Formspree lo procese
-
             // Solo mostramos un mensaje de confirmación
-
             setTimeout(function() {
-
                 alert('¡Gracias por tu interés! Un especialista se pondrá en contacto contigo en menos de 24 horas.');
-
             }, 500);
-
         });
-
     </script>
-
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'967601dd0495a049',t:'MTc1Mzg5MDU4MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
-
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9686e3acb0fda569',t:'MTc1NDA2NzYwMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
