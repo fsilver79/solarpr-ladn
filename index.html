@@ -1,597 +1,831 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SolarPR - Energía Solar para Puerto Rico</title>
-    <meta name="facebook-domain-verification" content="sv3lbhphub8r4q4lsny1d4prjht46p" />   
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'sky-blue': '#4AA5DE',
-                        'sky-dark': '#2980B9',
-                        'accent-green': '#2ECC71',
-                        'accent-yellow': '#F1C40F',
-                    },
-                    fontFamily: {
-                        'sans': ['Montserrat', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        .hero-pattern {
-            background-color: #4AA5DE;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
-        
-        .testimonial-card {
-            transition: transform 0.3s ease;
-        }
-        
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .floating {
-            animation: float 3s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-        
-        .pulse {
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¿Tu factura puede bajar cada año? | Solar Power Puerto Rico</title>
+<meta name="description" content="Mientras LUMA sube, tu pago solar baja. Descubre en 30 segundos si tu hogar califica para el Programa de Pago Decreciente. Evaluación gratis.">
+
+<!-- ============ META PIXEL ============ -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '4147185612162199');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=4147185612162199&ev=PageView&noscript=1"/></noscript>
+
+<!-- ============ GA4 ============ -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WRZ6ZMHBHB"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-WRZ6ZMHBHB');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ============ JSON-LD SCHEMA ============ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Programa de Pago Decreciente - Solar Power Puerto Rico",
+  "serviceType": "Instalación de sistemas solares residenciales",
+  "provider": {
+    "@type": "Organization",
+    "name": "Solar Power Puerto Rico",
+    "areaServed": { "@type": "Place", "name": "Puerto Rico" }
+  },
+  "description": "Sistemas solares residenciales con un pago que disminuye cada año. Instalación por Equity Solar Puerto Rico con técnicos y garantías locales.",
+  "offers": { "@type": "Offer", "priceCurrency": "USD", "availability": "https://schema.org/InStock" }
+}
+</script>
+
+<style>
+:root{
+  --navy:#172536;
+  --navy-2:#1E3A5F;
+  --green:#22C55E;
+  --green-d:#15803D;
+  --orange:#F08020;
+  --orange-d:#D96A12;
+  --cream:#F5F7FA;
+  --ink:#1B2430;
+  --muted:#5C6B7A;
+  --line:#E4E0D6;
+  --red:#C8362B;
+  --white:#fff;
+  --shadow:0 10px 40px rgba(15,42,74,.12);
+  --shadow-sm:0 4px 18px rgba(15,42,74,.08);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--white);line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.disp{font-family:'Poppins',sans-serif;line-height:1.08;letter-spacing:-.02em}
+img{max-width:100%;display:block}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+.green{color:var(--green)}
+.navy{color:var(--navy)}
+.orange{color:var(--orange)}
+
+/* ===== TOP TRUST BAR ===== */
+.topbar{background:var(--navy);color:#cfe0f2;font-size:13px;font-weight:500;text-align:center;padding:7px 14px;display:flex;align-items:center;justify-content:center;gap:10px}
+.tb-seal{height:26px;width:26px;border-radius:50%;background:#fff;padding:2px;flex:0 0 auto}
+@media(max-width:560px){.topbar{font-size:11.5px;gap:7px}.tb-seal{height:22px;width:22px}}
+.topbar b{color:#fff}
+
+/* ===== HEADER ===== */
+header{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:12px 22px;max-width:1080px;margin:0 auto}
+.brand-link{text-decoration:none;display:flex;align-items:center}
+.brand-lockup{display:flex;align-items:center;gap:14px}
+.hdr-logo{height:34px;width:auto}
+.hdr-equity{height:44px;width:44px;border-radius:50%;background:#fff;padding:2px;box-shadow:0 2px 10px rgba(23,37,54,.08)}
+.brand-divider{width:1px;height:34px;background:var(--line)}
+@media(max-width:560px){
+  .nav{padding:10px 14px}
+  .brand-lockup{gap:9px}
+  .hdr-logo{height:24px}
+  .hdr-equity{height:34px;width:34px}
+  .brand-divider{height:28px}
+}
+.nav-cta{background:var(--orange);color:#fff;font-family:'Poppins';font-weight:700;font-size:14px;padding:10px 18px;border-radius:50px;text-decoration:none;white-space:nowrap;transition:.2s}
+.nav-cta:hover{background:var(--orange-d)}
+@media(max-width:560px){.nav-cta{padding:9px 12px;font-size:13px}}
+
+/* ===== HERO ===== */
+.hero{background:linear-gradient(180deg,var(--cream),#fff);padding:54px 0 30px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:#E7F1E8;color:var(--green-d);font-weight:700;font-size:13px;padding:7px 14px;border-radius:50px;margin-bottom:20px;font-family:'Poppins'}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.hero h1{font-size:clamp(34px,5vw,52px);font-weight:800;color:var(--navy);margin-bottom:18px}
+.hero h1 .hl{color:var(--green);display:block}
+.hero p.sub{font-size:18px;color:var(--muted);max-width:480px;margin-bottom:26px;line-height:1.5}
+.hero p.sub b{color:var(--ink)}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.btn-primary{background:var(--orange);color:#fff;font-family:'Poppins';font-weight:700;font-size:17px;padding:16px 30px;border:none;border-radius:50px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:9px;box-shadow:0 8px 24px rgba(240,128,32,.35);transition:.2s}
+.btn-primary:hover{background:var(--orange-d);transform:translateY(-2px)}
+.btn-primary .arr{transition:.2s}
+.btn-primary:hover .arr{transform:translateX(4px)}
+.hero-micro{font-size:13px;color:var(--muted);margin-top:14px;display:flex;align-items:center;gap:7px}
+
+/* compare card in hero */
+.compare{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:26px 24px}
+.compare h4{font-family:'Poppins';font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);text-align:center;margin-bottom:18px}
+.cmp-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px}
+.cmp{border-radius:14px;padding:16px 14px;text-align:center}
+.cmp.luma{background:#FBEDEC;border:1px solid #F2C9C5}
+.cmp.solar{background:#E7F1E8;border:1px solid #BFE0C5}
+.cmp .lbl{font-family:'Poppins';font-weight:700;font-size:13px;letter-spacing:.03em;text-transform:uppercase}
+.cmp.luma .lbl{color:var(--red)}
+.cmp.solar .lbl{color:var(--green-d)}
+.cmp .ar{font-size:30px;font-weight:800;margin:6px 0 2px;font-family:'Poppins'}
+.cmp.luma .ar{color:var(--red)}
+.cmp.solar .ar{color:var(--green)}
+.cmp .t{font-size:12.5px;color:var(--muted)}
+.table-mini{border-top:1px dashed var(--line);padding-top:16px}
+.tm-row{display:grid;grid-template-columns:1fr auto;align-items:center;padding:7px 0;font-size:15px}
+.tm-row .yr{color:var(--muted);font-weight:600}
+.tm-row .pay{font-family:'Poppins';font-weight:800;color:var(--navy);font-size:19px}
+.tm-row.lastr .pay{color:var(--green)}
+.tm-note{font-size:11.5px;color:var(--muted);text-align:center;margin-top:10px;font-style:italic}
+@media(max-width:860px){.hero-grid{grid-template-columns:1fr;gap:32px}.hero{padding:36px 0 20px}}
+
+/* ===== LOGO STRIP ===== */
+.strip{background:var(--navy);color:#cfe0f2;padding:18px 0}
+.strip-in{display:flex;align-items:center;justify-content:center;gap:34px;flex-wrap:wrap;font-size:14px;font-weight:600}
+.strip-in span{display:flex;align-items:center;gap:9px}
+.strip-in svg{flex:0 0 auto}
+
+/* ===== PREQUALIFIER ===== */
+.qual{background:linear-gradient(180deg,#fff,var(--cream));padding:64px 0}
+.qual-head{text-align:center;max-width:620px;margin:0 auto 36px}
+.qual-head h2{font-size:clamp(28px,4vw,40px);font-weight:800;color:var(--navy);margin-bottom:12px}
+.qual-head p{font-size:17px;color:var(--muted)}
+.qbox{background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);max-width:600px;margin:0 auto;overflow:hidden}
+.qprog{height:6px;background:var(--line)}
+.qprog .bar{height:100%;background:linear-gradient(90deg,var(--green),var(--green-d));width:20%;transition:width .4s ease}
+.qinner{padding:38px 34px 34px}
+.qstep{display:none;animation:fade .35s ease}
+.qstep.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.qcount{font-family:'Poppins';font-weight:700;font-size:13px;color:var(--green);letter-spacing:.05em;text-transform:uppercase;margin-bottom:8px}
+.qstep h3{font-size:24px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.qstep .qhint{font-size:14.5px;color:var(--muted);margin-bottom:22px}
+.opts{display:grid;gap:12px}
+.opt{display:flex;align-items:center;gap:14px;border:2px solid var(--line);border-radius:14px;padding:16px 18px;cursor:pointer;font-size:16px;font-weight:600;color:var(--ink);transition:.18s;background:#fff;text-align:left;width:100%;font-family:'Inter'}
+.opt:hover{border-color:var(--green);background:#F4FAF5}
+.opt .ic{width:38px;height:38px;border-radius:10px;background:var(--cream);display:grid;place-items:center;flex:0 0 auto;font-size:20px}
+.opt .sub{display:block;font-size:13px;font-weight:500;color:var(--muted);margin-top:2px}
+/* form fields */
+.qfield{margin-bottom:16px}
+.qfield label{display:block;font-weight:600;font-size:14px;color:var(--navy);margin-bottom:6px;font-family:'Poppins'}
+.qfield input{width:100%;border:2px solid var(--line);border-radius:12px;padding:14px 16px;font-size:16px;font-family:'Inter';color:var(--ink);transition:.18s}
+.qfield input:focus{outline:none;border-color:var(--green)}
+.qsubmit{width:100%;background:var(--orange);color:#fff;font-family:'Poppins';font-weight:700;font-size:17px;padding:16px;border:none;border-radius:50px;cursor:pointer;margin-top:8px;transition:.2s;box-shadow:0 8px 24px rgba(240,128,32,.32)}
+.qsubmit:hover{background:var(--orange-d)}
+.qsubmit:disabled{opacity:.6;cursor:not-allowed}
+.qback{background:none;border:none;color:var(--muted);font-size:14px;cursor:pointer;margin-top:16px;font-weight:600;display:inline-flex;align-items:center;gap:5px}
+.qback:hover{color:var(--navy)}
+.priv{font-size:12px;color:var(--muted);text-align:center;margin-top:14px;display:flex;align-items:center;justify-content:center;gap:6px}
+
+/* result screens */
+.qresult{text-align:center;padding:10px 0}
+.rcheck{width:74px;height:74px;border-radius:50%;background:#E7F1E8;display:grid;place-items:center;margin:0 auto 18px}
+.qresult h3{font-size:26px;color:var(--green-d);margin-bottom:10px}
+.qresult p{color:var(--muted);font-size:16px;margin-bottom:24px;max-width:420px;margin-left:auto;margin-right:auto}
+.wa-btn{background:#25D366;color:#fff;font-family:'Poppins';font-weight:700;font-size:16px;padding:15px 28px;border-radius:50px;text-decoration:none;display:inline-flex;align-items:center;gap:10px;box-shadow:0 8px 22px rgba(37,211,102,.3);transition:.2s}
+.wa-btn:hover{filter:brightness(.95);transform:translateY(-2px)}
+.qresult.warn .rcheck{background:#FFF4E5}
+.qresult.warn h3{color:var(--orange-d)}
+.calendly-box{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--cream);margin:20px 0 14px;min-height:640px}
+.calendly-frame{width:100%;height:640px;border:0;display:block;background:#fff}
+.calendly-placeholder{min-height:280px;display:grid;place-items:center;text-align:center;padding:28px;color:var(--muted);font-size:14.5px}
+.schedule-actions{display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:12px}
+.btn-secondary{background:#fff;color:var(--navy);border:2px solid var(--line);font-family:'Poppins';font-weight:700;font-size:15px;padding:13px 22px;border-radius:50px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.2s}
+.btn-secondary:hover{border-color:var(--green);color:var(--green-d)}
+.btn-secondary.disabled{opacity:.55;pointer-events:none}
+.schedule-note{font-size:12.5px!important;margin-top:10px!important;margin-bottom:0!important;color:var(--muted)!important}
+.wa-support{margin-top:14px}
+
+/* ===== HOW (3 steps) ===== */
+.how{padding:64px 0;background:#fff}
+.sec-head{text-align:center;max-width:600px;margin:0 auto 44px}
+.sec-head .ey{font-family:'Poppins';font-weight:700;color:var(--green);font-size:13px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}
+.sec-head h2{font-size:clamp(27px,4vw,38px);font-weight:800;color:var(--navy)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.stepc{background:var(--cream);border-radius:18px;padding:30px 24px;position:relative}
+.stepc .n{font-family:'Poppins';font-weight:800;font-size:15px;color:#fff;background:var(--green);width:34px;height:34px;border-radius:50%;display:grid;place-items:center;margin-bottom:16px}
+.stepc h3{font-size:19px;color:var(--navy);font-weight:700;margin-bottom:8px}
+.stepc p{font-size:14.5px;color:var(--muted)}
+@media(max-width:760px){.steps{grid-template-columns:1fr}}
+
+/* ===== BIG TABLE ===== */
+.proof{padding:64px 0;background:var(--navy);color:#fff}
+.proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.proof h2{font-size:clamp(27px,4vw,38px);font-weight:800;color:#fff;margin-bottom:14px}
+.proof h2 .hl{color:#6FD17F}
+.proof p{color:#bcd0e6;font-size:16.5px;margin-bottom:18px}
+.proof .reframe{background:rgba(255,255,255,.07);border-left:4px solid var(--orange);border-radius:0 12px 12px 0;padding:16px 18px;font-size:15.5px;color:#e8f0f8}
+.proof .reframe b{color:#fff}
+.bigtable{background:#fff;border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
+.bt-head{display:grid;grid-template-columns:1fr 1.2fr;background:var(--navy-2);color:#fff;font-family:'Poppins';font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.04em;padding:14px 22px}
+.bt-row{display:grid;grid-template-columns:1fr 1.2fr;align-items:center;padding:16px 22px;border-bottom:1px solid var(--line)}
+.bt-row:last-child{border-bottom:none}
+.bt-row .yr{font-family:'Poppins';font-weight:800;font-size:22px;color:var(--navy)}
+.bt-row .pay{font-family:'Poppins';font-weight:800;font-size:26px;color:var(--green)}
+.bt-row.down{background:#F4FAF5}
+.bt-note{font-size:12px;color:var(--muted);text-align:center;padding:13px;font-style:italic;background:var(--cream)}
+@media(max-width:760px){.proof-grid{grid-template-columns:1fr;gap:30px}}
+
+/* ===== WHY US ===== */
+.why{padding:64px 0;background:var(--cream)}
+.feat{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:10px}
+.fc{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px 20px;text-align:center}
+.fc .fic{width:52px;height:52px;border-radius:13px;background:#E7F1E8;display:grid;place-items:center;margin:0 auto 14px}
+.fc h3{font-size:15.5px;color:var(--navy);font-weight:700;margin-bottom:6px;font-family:'Poppins'}
+.fc p{font-size:13px;color:var(--muted)}
+@media(max-width:860px){.feat{grid-template-columns:1fr 1fr}}
+
+/* ===== FAQ (objections) ===== */
+.faq{padding:64px 0;background:#fff}
+.faq-list{max-width:720px;margin:0 auto}
+.fitem{border-bottom:1px solid var(--line)}
+.fq{width:100%;background:none;border:none;text-align:left;font-family:'Poppins';font-weight:600;font-size:17px;color:var(--navy);padding:20px 40px 20px 0;cursor:pointer;position:relative;display:flex;justify-content:space-between;gap:16px;align-items:center}
+.fq .pm{font-size:22px;color:var(--green);transition:.25s;flex:0 0 auto}
+.fq[aria-expanded="true"] .pm{transform:rotate(45deg)}
+.fa{max-height:0;overflow:hidden;transition:max-height .3s ease;color:var(--muted);font-size:15.5px}
+.fa div{padding:0 0 20px}
+
+/* ===== FINAL CTA ===== */
+.final{padding:66px 0;background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff;text-align:center}
+.final h2{font-size:clamp(28px,4.5vw,42px);font-weight:800;margin-bottom:14px}
+.final h2 .hl{color:#6FD17F}
+.final p{color:#bcd0e6;font-size:18px;max-width:520px;margin:0 auto 28px}
+.final .btn-primary{font-size:18px;padding:18px 38px}
+.final .micro{margin-top:16px;color:#9fb6cf;font-size:13.5px}
+
+/* ===== FOOTER ===== */
+footer{background:#0a1f37;color:#8aa3bf;padding:34px 0;font-size:13px}
+.foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+.foot-brand{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.foot-logo{height:30px;width:auto}
+.foot-ally{display:flex;align-items:center;gap:13px;padding-left:22px;border-left:1px solid rgba(255,255,255,.12)}
+.foot-ally span{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:#7d97b3}
+.foot-seal{height:64px;width:64px;border-radius:50%;background:#fff;padding:3px}
+.foot-contact{text-align:right;line-height:1.7}
+.foot a{color:#bcd0e6;text-decoration:none}
+@media(max-width:560px){.foot{flex-direction:column;align-items:flex-start;gap:18px}.foot-contact{text-align:left}.foot-ally{padding-left:0;border-left:none}.foot-seal{height:68px;width:68px}}
+.disc{max-width:1080px;margin:18px auto 0;padding:16px 22px 0;border-top:1px solid rgba(255,255,255,.08);font-size:11.5px;line-height:1.6;color:#6a839e}
+
+/* sticky mobile CTA */
+.sticky{display:none;position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);padding:11px 16px;z-index:60;box-shadow:0 -4px 20px rgba(0,0,0,.08)}
+.sticky .btn-primary{width:100%;justify-content:center;font-size:16px;padding:14px}
+@media(max-width:760px){.sticky{display:block}body{padding-bottom:74px}}
+@media(max-width:560px){
+  .wrap{padding:0 16px}
+  .qinner{padding:28px 18px 24px}
+  .qbox{border-radius:18px}
+  .opt{padding:15px 14px;font-size:15px}
+  .btn-primary,.qsubmit,.wa-btn,.btn-secondary{width:100%;justify-content:center}
+  .calendly-box{min-height:610px;border-radius:12px;margin-left:-8px;margin-right:-8px}
+  .calendly-frame{height:610px}
+  .schedule-actions{gap:10px}
+}
+</style>
 </head>
-<body class="font-sans text-gray-800 bg-gray-50">
-    <!-- Barra de navegación -->
-    <nav class="bg-white shadow-md fixed w-full z-50">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="flex items-center">
-                <svg class="h-10 w-10 text-sky-blue" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0 c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2 c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1 S11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0 s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06 c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41 c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36 c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/>
-                </svg>
-                <span class="ml-2 text-xl font-bold text-sky-blue">SolarPR</span>
-            </div>
-            <div class="hidden md:flex space-x-8">
-                <a href="#beneficios" class="text-gray-600 hover:text-sky-blue transition">Beneficios</a>
-                <a href="#proceso" class="text-gray-600 hover:text-sky-blue transition">Proceso</a>
-                <a href="#testimonios" class="text-gray-600 hover:text-sky-blue transition">Testimonios</a>
-                <a href="#contacto" class="text-gray-600 hover:text-sky-blue transition">Contacto</a>
-            </div>
-            <div>
-                <a href="#contacto" class="bg-accent-green hover:bg-green-600 text-white font-medium py-2 px-4 rounded-lg transition duration-300 shadow-md">
-                    Evaluación Gratis
-                </a>
-            </div>
-        </div>
-    </nav>
+<body>
 
-    <!-- Hero Section -->
-    <header class="pt-24 pb-16 hero-pattern">
-        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
-                <h1 class="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
-                    ¡Libérate de los apagones y las facturas abusivas para siempre!
-                </h1>
-                <p class="text-xl text-white opacity-90 mb-8">
-                    Únete a miles de puertorriqueños que ya disfrutan de energía limpia, confiable y económica.
-                </p>
-                <div class="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="#contacto" class="bg-white text-sky-blue hover:bg-gray-100 font-bold py-3 px-6 rounded-lg transition duration-300 shadow-lg pulse">
-                        Solicita tu evaluación gratis
-                    </a>
-                    <a href="#proceso" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-sky-blue font-bold py-3 px-6 rounded-lg transition duration-300">
-                        Conoce más
-                    </a>
-                </div>
-            </div>
-            <div class="md:w-1/2 flex justify-center">
-                <div class="relative">
-                    <svg class="w-full max-w-lg floating" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                        <path fill="#FFFFFF" d="M48.8,-46.1C63.9,-33.5,77.5,-16.7,77.9,0.4C78.3,17.5,65.6,35,49.9,47.7C34.2,60.4,15.5,68.3,-1.9,70.2C-19.3,72.1,-38.6,68,-52.1,55.4C-65.6,42.9,-73.3,21.4,-72.8,0.5C-72.3,-20.5,-63.6,-41,-49.1,-53.6C-34.6,-66.2,-14.3,-70.9,1.2,-72.1C16.7,-73.3,33.7,-58.8,48.8,-46.1Z" transform="translate(100 100)" />
-                    </svg>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <svg class="w-3/4 h-3/4" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M256 0C114.615 0 0 114.615 0 256C0 397.385 114.615 512 256 512C397.385 512 512 397.385 512 256C512 114.615 397.385 0 256 0ZM256 64C273.673 64 288 78.327 288 96C288 113.673 273.673 128 256 128C238.327 128 224 113.673 224 96C224 78.327 238.327 64 256 64ZM384 192C384 209.673 369.673 224 352 224C334.327 224 320 209.673 320 192C320 174.327 334.327 160 352 160C369.673 160 384 174.327 384 192ZM160 192C160 174.327 174.327 160 192 160C209.673 160 224 174.327 224 192C224 209.673 209.673 224 192 224C174.327 224 160 209.673 160 192ZM256 448C238.327 448 224 433.673 224 416C224 398.327 238.327 384 256 384C273.673 384 288 398.327 288 416C288 433.673 273.673 448 256 448ZM352 352C334.327 352 320 337.673 320 320C320 302.327 334.327 288 352 288C369.673 288 384 302.327 384 320C384 337.673 369.673 352 352 352ZM160 320C160 302.327 174.327 288 192 288C209.673 288 224 302.327 224 320C224 337.673 209.673 352 192 352C174.327 352 160 337.673 160 320Z" fill="#4AA5DE"/>
-                            <path d="M256 160V352M256 160L352 224M256 160L160 224M256 352L352 288M256 352L160 288" stroke="#2980B9" stroke-width="16" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+<div class="topbar"><img src="equity-logo.png" alt="Equity Solar" class="tb-seal"><span>Programa de Pago Decreciente · <b>Instalado por Equity Solar Puerto Rico</b> · Técnicos y garantías locales</span></div>
 
-    <!-- Formulario de contacto flotante (visible en móvil) -->
-    <div class="md:hidden bg-white rounded-t-lg shadow-lg fixed bottom-0 left-0 right-0 z-40 border-t-4 border-sky-blue">
-        <div class="p-4">
-            <h3 class="text-lg font-bold text-sky-blue mb-2">¡Solicita tu evaluación gratis!</h3>
-            <form id="mobile-form" action="https://formspree.io/f/xeozzdoe" method="POST" class="space-y-3">
-                <input type="text" name="nombre" placeholder="Nombre completo" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-blue" required>
-                <input type="tel" name="telefono" placeholder="Teléfono" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-blue" required>
-                <input type="email" name="email" placeholder="Email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-sky-blue" required>
-                <button type="submit" class="w-full bg-accent-green hover:bg-green-600 text-white font-medium py-2 px-4 rounded-lg transition duration-300">
-                    Califica ahora
-                </button>
-            </form>
+<header>
+  <div class="nav">
+    <a href="#" class="brand-link" aria-label="Solar Power Puerto Rico en alianza con Equity Solar Puerto Rico">
+      <div class="brand-lockup">
+        <img src="spp-logo.png" alt="Solar Power Puerto Rico" class="hdr-logo">
+        <span class="brand-divider" aria-hidden="true"></span>
+        <img src="equity-logo.png" alt="Equity Solar Puerto Rico" class="hdr-equity">
+      </div>
+    </a>
+    <a href="#calificar" class="nav-cta" onclick="trackCTA('header')">Descubre si calificas</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow"><span class="dot"></span>Evaluación gratis · Sin compromiso</div>
+      <h1>¿Cuándo fue la última vez que una factura<span class="hl">bajó por sí sola?</span></h1>
+      <p class="sub">Mientras la factura de LUMA sigue subiendo, hay un pago que hace lo contrario. Con tu sistema solar, <b>tu pago disminuye cada año.</b></p>
+      <div class="hero-ctas">
+        <a href="#calificar" class="btn-primary" onclick="trackCTA('hero')">Descubre si calificas <span class="arr">→</span></a>
+      </div>
+      <div class="hero-micro">✓ Toma 30 segundos · ✓ No afecta tu crédito · ✓ Respuesta inmediata</div>
+    </div>
+    <div class="compare">
+      <h4>Dos facturas, dos caminos</h4>
+      <div class="cmp-row">
+        <div class="cmp luma">
+          <div class="lbl">Factura LUMA</div>
+          <div class="ar">↗</div>
+          <div class="t">Sube cada año</div>
         </div>
+        <div class="cmp solar">
+          <div class="lbl">Tu pago solar</div>
+          <div class="ar">↘</div>
+          <div class="t">Baja cada año</div>
+        </div>
+      </div>
+      <div class="table-mini">
+        <div class="tm-row"><span class="yr">Año 1</span><span class="pay">$225</span></div>
+        <div class="tm-row"><span class="yr">Año 5</span><span class="pay">$216</span></div>
+        <div class="tm-row lastr"><span class="yr">Año 10</span><span class="pay">$205</span></div>
+        <div class="tm-note">Ejemplo ilustrativo del concepto de pago decreciente.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<section class="strip">
+  <div class="strip-in">
+    <span>📅 Pago decreciente cada año</span>
+    <span>⚡ Instalación rápida</span>
+    <span>🔧 Técnicos locales</span>
+    <span>🛡️ Garantías locales</span>
+  </div>
+</section>
+
+<!-- PREQUALIFIER -->
+<section class="qual" id="calificar">
+  <div class="wrap">
+    <div class="qual-head">
+      <h2>Responde 4 preguntas y descubre si tu hogar califica</h2>
+      <p>Verificamos tu elegibilidad para el Programa de Pago Decreciente. No es una solicitud de compra — solo confirmamos si aplicas.</p>
     </div>
 
-    <!-- Beneficios -->
-    <section id="beneficios" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Beneficios de la energía solar</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Descubre por qué miles de puertorriqueños están cambiando a energía solar</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Beneficio 1 -->
-                <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition duration-300 border-t-4 border-sky-blue">
-                    <div class="text-sky-blue text-4xl mb-4">
-                        <i class="fas fa-dollar-sign"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Sin pagos hasta medición neta</h3>
-                    <p class="text-gray-600">Comienza a ahorrar desde el primer día sin tener que hacer pagos comunmente hasta los primeros 6 meses.</p>
-                </div>
-                
-                <!-- Beneficio 2 -->
-                <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition duration-300 border-t-4 border-accent-green">
-                    <div class="text-accent-green text-4xl mb-4">
-                        <i class="fas fa-gift"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">$1,200 en incentivos</h3>
-                    <p class="text-gray-600">Aprovecha los incentivos federales y locales que pueden sumar hasta $1,200 en ahorros adicionales.</p>
-                </div>
-                
-                <!-- Beneficio 3 -->
-                <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition duration-300 border-t-4 border-accent-yellow">
-                    <div class="text-accent-yellow text-4xl mb-4">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Instalación en 30 días</h3>
-                    <p class="text-gray-600">Nuestro equipo profesional completa todo el proceso de instalación en menos de 30 días.</p>
-                </div>
-                
-                <!-- Beneficio 4 -->
-                <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition duration-300 border-t-4 border-sky-blue">
-                    <div class="text-sky-blue text-4xl mb-4">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Garantía de 25 años</h3>
-                    <p class="text-gray-600">Todos nuestros sistemas incluyen una garantía completa de 25 años en equipos y rendimiento.</p>
-                </div>
-                
-                <!-- Beneficio 5 -->
-                <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition duration-300 border-t-4 border-accent-green">
-                    <div class="text-accent-green text-4xl mb-4">
-                        <i class="fas fa-leaf"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Energía limpia</h3>
-                    <p class="text-gray-600">Reduce tu huella de carbono y contribuye a un Puerto Rico más sostenible y ecológico.</p>
-                </div>
-                
-                <!-- Beneficio 6 -->
-                <div class="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition duration-300 border-t-4 border-accent-yellow">
-                    <div class="text-accent-yellow text-4xl mb-4">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Aumenta el valor de tu propiedad</h3>
-                    <p class="text-gray-600">Las propiedades con sistemas solares tienen un valor de mercado hasta un 4.1% mayor.</p>
-                </div>
-            </div>
-            
-            <div class="text-center mt-12">
-                <a href="#contacto" class="inline-block bg-sky-blue hover:bg-sky-dark text-white font-bold py-3 px-8 rounded-lg transition duration-300 shadow-md">
-                    ¡Quiero estos beneficios!
-                </a>
-            </div>
+    <div class="qbox">
+      <div class="qprog"><div class="bar" id="bar"></div></div>
+      <div class="qinner">
+
+        <!-- STEP 1 -->
+        <div class="qstep active" data-step="1">
+          <div class="qcount">Pregunta 1 de 4</div>
+          <h3>¿Eres dueño de tu vivienda?</h3>
+          <p class="qhint">El programa aplica solo a propietarios de la propiedad.</p>
+          <div class="opts">
+            <button class="opt" onclick="answer('owner','si',this)"><span class="ic">🏠</span> Sí, soy dueño</button>
+            <button class="opt" onclick="answer('owner','no',this)"><span class="ic">🔑</span> No, alquilo</button>
+          </div>
         </div>
-    </section>
 
-    <!-- Proceso -->
-    <section id="proceso" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Proceso simple y sin complicaciones</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Te acompañamos en cada paso del camino hacia la independencia energética</p>
-            </div>
-            
-            <div class="max-w-4xl mx-auto">
-                <!-- Paso 1 -->
-                <div class="flex flex-col md:flex-row items-center mb-12">
-                    <div class="md:w-1/4 flex justify-center mb-6 md:mb-0">
-                        <div class="w-20 h-20 bg-sky-blue rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg">
-                            1
-                        </div>
-                    </div>
-                    <div class="md:w-3/4">
-                        <h3 class="text-2xl font-bold mb-2">Evaluación gratuita</h3>
-                        <p class="text-gray-600">Nuestros expertos analizan tu consumo eléctrico y el espacio disponible para diseñar el sistema ideal para tu hogar o negocio.</p>
-                    </div>
-                </div>
-                
-                <!-- Paso 2 -->
-                <div class="flex flex-col md:flex-row items-center mb-12">
-                    <div class="md:w-1/4 flex justify-center mb-6 md:mb-0">
-                        <div class="w-20 h-20 bg-sky-blue rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg">
-                            2
-                        </div>
-                    </div>
-                    <div class="md:w-3/4">
-                        <h3 class="text-2xl font-bold mb-2">Propuesta personalizada</h3>
-                        <p class="text-gray-600">Recibirás una propuesta detallada con el diseño del sistema, costos, financiamiento disponible y proyección de ahorros.</p>
-                    </div>
-                </div>
-                
-                <!-- Paso 3 -->
-                <div class="flex flex-col md:flex-row items-center mb-12">
-                    <div class="md:w-1/4 flex justify-center mb-6 md:mb-0">
-                        <div class="w-20 h-20 bg-sky-blue rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg">
-                            3
-                        </div>
-                    </div>
-                    <div class="md:w-3/4">
-                        <h3 class="text-2xl font-bold mb-2">Instalación profesional</h3>
-                        <p class="text-gray-600">Nuestro equipo certificado instala tu sistema con los más altos estándares de calidad y seguridad en menos de 30 días.</p>
-                    </div>
-                </div>
-                
-                <!-- Paso 4 -->
-                <div class="flex flex-col md:flex-row items-center">
-                    <div class="md:w-1/4 flex justify-center mb-6 md:mb-0">
-                        <div class="w-20 h-20 bg-sky-blue rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg">
-                            4
-                        </div>
-                    </div>
-                    <div class="md:w-3/4">
-                        <h3 class="text-2xl font-bold mb-2">¡Comienza a ahorrar!</h3>
-                        <p class="text-gray-600">Disfruta de energía limpia y confiable mientras ves cómo se reducen drásticamente tus facturas de electricidad.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-12">
-                <a href="#contacto" class="inline-block bg-accent-green hover:bg-green-600 text-white font-bold py-3 px-8 rounded-lg transition duration-300 shadow-md">
-                    Comienza hoy mismo
-                </a>
-            </div>
+        <!-- STEP 2 -->
+        <div class="qstep" data-step="2">
+          <div class="qcount">Pregunta 2 de 4</div>
+          <h3>¿Cuánto pagas de luz al mes?</h3>
+          <p class="qhint">Aproximadamente, en tu factura de LUMA.</p>
+          <div class="opts">
+            <button class="opt" onclick="answer('bill','low',this)"><span class="ic">💡</span> Menos de $150</button>
+            <button class="opt" onclick="answer('bill','mid',this)"><span class="ic">💡</span> Entre $150 y $300 <span class="sub">El rango ideal del programa</span></button>
+            <button class="opt" onclick="answer('bill','high',this)"><span class="ic">⚡</span> Más de $300 <span class="sub">Mayor potencial de ahorro</span></button>
+          </div>
         </div>
-    </section>
 
-    <!-- Testimonios -->
-    <section id="testimonios" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Lo que dicen nuestros clientes</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Más de 500 familias y negocios en Puerto Rico ya disfrutan de los beneficios de la energía solar</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Testimonio 1 (Actualizado) -->
-                <div class="testimonial-card bg-gray-50 rounded-xl p-6 shadow-md">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-sky-blue rounded-full flex items-center justify-center text-white font-bold text-xl">
-                            CV
-                        </div>
-                        <div class="ml-4">
-                            <h4 class="font-bold">Hector Cintrón y Wanda Pomales</h4>
-                            <p class="text-gray-500 text-sm">Guayama</p>
-                        </div>
-                    </div>
-                    <div class="mb-4 text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-gray-600 italic">"¡Increíble lo rápido y perfecto que fue todo el proceso, me instalrón en solo 15 dias! El equipo técnico fue muy profesional y dejaron todo impecable. Estoy encantada con el resultado y la calidad del servicio."</p>
-                </div>
-                
-                <!-- Testimonio 2 -->
-                <div class="testimonial-card bg-gray-50 rounded-xl p-6 shadow-md">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-accent-green rounded-full flex items-center justify-center text-white font-bold text-xl">
-                            LC
-                        </div>
-                        <div class="ml-4">
-                            <h4 class="font-bold">Laura Colón</h4>
-                            <p class="text-gray-500 text-sm">Ponce</p>
-                        </div>
-                    </div>
-                    <div class="mb-4 text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="text-gray-600 italic">"Lo mejor fue la tranquilidad durante los apagones. Mientras mis vecinos estaban sin luz, nosotros seguíamos con energía gracias a nuestro sistema solar con baterías."</p>
-                </div>
-                
-                <!-- Testimonio 3 -->
-                <div class="testimonial-card bg-gray-50 rounded-xl p-6 shadow-md">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-accent-yellow rounded-full flex items-center justify-center text-white font-bold text-xl">
-                            JM
-                        </div>
-                        <div class="ml-4">
-                            <h4 class="font-bold">José Martínez</h4>
-                            <p class="text-gray-500 text-sm">Mayagüez</p>
-                        </div>
-                    </div>
-                    <div class="mb-4 text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <p class="text-gray-600 italic">"Para mi negocio, la energía solar ha sido una inversión excelente. Redujimos costos operativos y además nos posicionamos como una empresa comprometida con el medio ambiente."</p>
-                </div>
-            </div>
+        <!-- STEP 3 -->
+        <div class="qstep" data-step="3">
+          <div class="qcount">Pregunta 3 de 4</div>
+          <h3>¿Cómo describes tu crédito?</h3>
+          <p class="qhint">Una idea general es suficiente. No hacemos consulta dura.</p>
+          <div class="opts">
+            <button class="opt" onclick="answer('credit','high',this)"><span class="ic">⭐</span> Bueno o excelente <span class="sub">700+ aprox.</span></button>
+            <button class="opt" onclick="answer('credit','mid',this)"><span class="ic">👍</span> Regular <span class="sub">640 – 699 aprox.</span></button>
+            <button class="opt" onclick="answer('credit','low',this)"><span class="ic">🤔</span> No estoy seguro</button>
+          </div>
         </div>
-    </section>
 
-    <!-- Contacto -->
-    <section id="contacto" class="py-16 bg-sky-blue">
-        <div class="container mx-auto px-4">
-            <div class="bg-white rounded-xl shadow-xl overflow-hidden">
-                <div class="flex flex-col md:flex-row">
-                    <!-- Formulario -->
-                    <div class="md:w-1/2 p-8">
-                        <h2 class="text-3xl font-bold mb-2">¡Solicita tu evaluación gratis!</h2>
-                        <p class="text-gray-600 mb-6">Completa el formulario y un especialista te contactará en menos de 24 horas.</p>
-                        
-                        <form id="contact-form" action="https://formspree.io/f/xeozzdoe" method="POST" class="space-y-4">
-                            <div>
-                                <label class="block text-gray-700 mb-2" for="nombre">Nombre completo</label>
-                                <input type="text" id="nombre" name="nombre" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-blue" required>
-                            </div>
-                            
-                            <div>
-                                <label class="block text-gray-700 mb-2" for="telefono">Teléfono</label>
-                                <input type="tel" id="telefono" name="telefono" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-blue" required>
-                            </div>
-                            
-                            <div>
-                                <label class="block text-gray-700 mb-2" for="email">Correo electrónico</label>
-                                <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-blue" required>
-                            </div>
-                            
-                            <div>
-                                <label class="block text-gray-700 mb-2">Puntuación de crédito aproximada</label>
-                                <div class="flex space-x-4">
-                                    <div class="flex items-center">
-                                        <input type="radio" id="credito680" name="credito" value="680" class="mr-2" required>
-                                        <label for="credito680">680</label>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <input type="radio" id="credito680mas" name="credito" value="680 o más" class="mr-2">
-                                        <label for="credito680mas">680 o más</label>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div>
-                                <label class="block text-gray-700 mb-2">¿Casa Propia?</label>
-                                <div class="flex space-x-4">
-                                    <div class="flex items-center">
-                                        <input type="radio" id="casaSi" name="casa" value="Sí" class="mr-2" required>
-                                        <label for="casaSi">Sí</label>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <input type="radio" id="casaNo" name="casa" value="No" class="mr-2">
-                                        <label for="casaNo">No</label>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div>
-                                <label class="block text-gray-700 mb-2" for="factura">¿De cuánto fue su última factura de Luma?</label>
-                                <input type="text" id="factura" name="factura" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-blue" required>
-                            </div>
-                            
-                            <button type="submit" class="w-full bg-accent-green hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 shadow-md">
-                                Califica ahora
-                            </button>
-                        </form>
-                    </div>
-                    
-                    <!-- Información de contacto -->
-                    <div class="md:w-1/2 bg-gray-50 p-8 flex flex-col justify-between">
-                        <div>
-                            <h3 class="text-2xl font-bold mb-6">Información de contacto</h3>
-                            
-                            <div class="space-y-4">
-                                <div class="flex items-start">
-                                    <div class="text-sky-blue text-xl mr-4">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-bold">Dirección</h4>
-                                        <p class="text-gray-600">108 Calle Prados Guayama, PR 00784</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="flex items-start">
-                                    <div class="text-sky-blue text-xl mr-4">
-                                        <i class="fas fa-phone"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-bold">Teléfono</h4>
-                                        <p class="text-gray-600">(787) 507-0107</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="flex items-start">
-                                    <div class="text-sky-blue text-xl mr-4">
-                                        <i class="fas fa-envelope"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-bold">Correo electrónico</h4>
-                                        <p class="text-gray-600">info@solarpowerpuertorico.net</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="flex items-start">
-                                    <div class="text-sky-blue text-xl mr-4">
-                                        <i class="fas fa-clock"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-bold">Horario</h4>
-                                        <p class="text-gray-600">Lunes a Viernes: 8:00 AM - 6:00 PM<br>Sábados: 9:00 AM - 1:00 PM</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="mt-8">
-                            <h4 class="font-bold mb-4">Contáctanos por WhatsApp</h4>
-                            <a href="https://wa.me/17875070107" class="flex items-center bg-green-500 hover:bg-green-600 text-white font-medium py-3 px-6 rounded-lg transition duration-300 shadow-md w-fit">
-                                <i class="fab fa-whatsapp text-xl mr-2"></i>
-                                Enviar mensaje
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- STEP 4 -->
+        <div class="qstep" data-step="4">
+          <div class="qcount">Pregunta 4 de 4</div>
+          <h3>¿En qué pueblo está tu hogar?</h3>
+          <p class="qhint">Para asignarte un técnico local de Equity Solar.</p>
+          <div class="qfield">
+            <input type="text" id="town" placeholder="Ej. Caguas, Bayamón, Ponce..." autocomplete="address-level2">
+          </div>
+          <button class="qsubmit" onclick="goToCapture()">Continuar →</button>
+          <button class="qback" onclick="prevStep()">← Atrás</button>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <!-- Logo y descripción -->
-                <div class="md:col-span-1">
-                    <div class="flex items-center mb-4">
-                        <svg class="h-8 w-8 text-sky-blue" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0 c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2 c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1 S11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0 s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06 c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41 c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36 c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/>
-                        </svg>
-                        <span class="ml-2 text-xl font-bold text-sky-blue">SolarPR</span>
-                    </div>
-                    <p class="text-gray-400 mb-4">Transformando Puerto Rico con energía limpia, confiable y económica desde 2015.</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-sky-blue transition">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-sky-blue transition">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-sky-blue transition">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-sky-blue transition">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Enlaces rápidos -->
-                <div class="md:col-span-1">
-                    <h4 class="text-lg font-bold mb-4">Enlaces rápidos</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-sky-blue transition">Inicio</a></li>
-                        <li><a href="#beneficios" class="text-gray-400 hover:text-sky-blue transition">Beneficios</a></li>
-                        <li><a href="#proceso" class="text-gray-400 hover:text-sky-blue transition">Proceso</a></li>
-                        <li><a href="#testimonios" class="text-gray-400 hover:text-sky-blue transition">Testimonios</a></li>
-                        <li><a href="#contacto" class="text-gray-400 hover:text-sky-blue transition">Contacto</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Servicios -->
-                <div class="md:col-span-1">
-                    <h4 class="text-lg font-bold mb-4">Servicios</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-sky-blue transition">Sistemas residenciales</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-sky-blue transition">Sistemas comerciales</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-sky-blue transition">Baterías de respaldo</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-sky-blue transition">Mantenimiento</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-sky-blue transition">Financiamiento</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Boletín -->
-                <div class="md:col-span-1">
-                    <h4 class="text-lg font-bold mb-4">Boletín informativo</h4>
-                    <p class="text-gray-400 mb-4">Suscríbete para recibir noticias y ofertas especiales.</p>
-                    <form action="https://formspree.io/f/xeozzdoe" method="POST" class="space-y-2">
-                        <input type="email" name="email-boletin" placeholder="Tu correo electrónico" class="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-sky-blue">
-                        <button type="submit" class="w-full bg-sky-blue hover:bg-sky-dark text-white font-medium py-2 px-4 rounded-md transition duration-300">
-                            Suscribirse
-                        </button>
-                    </form>
-                </div>
-            </div>
-            
-            <div class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between">
-                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2023 SolarPR. Todos los derechos reservados.</p>
-                <div class="flex space-x-4">
-                    <a href="#" class="text-gray-400 hover:text-sky-blue transition text-sm">Política de privacidad</a>
-                    <a href="#" class="text-gray-400 hover:text-sky-blue transition text-sm">Términos y condiciones</a>
-                </div>
-            </div>
+        <!-- CAPTURE -->
+        <div class="qstep" data-step="5">
+          <div class="qcount green">✓ Resultado preliminar</div>
+          <h3 id="capTitle">¡Buenas noticias! Tu hogar califica preliminarmente.</h3>
+          <p class="qhint" id="capHint">Déjanos tu nombre y número para confirmar tu elegibilidad. En el próximo paso escoges fecha y hora para ver tu pago decreciente estimado.</p>
+          <div class="qfield">
+            <label for="name">Nombre completo</label>
+            <input type="text" id="name" placeholder="Tu nombre y apellido" autocomplete="name">
+          </div>
+          <div class="qfield">
+            <label for="phone">Teléfono (WhatsApp)</label>
+            <input type="tel" id="phone" placeholder="787-000-0000" autocomplete="tel">
+          </div>
+          <button class="qsubmit" id="finalSubmit" onclick="submitLead()">Continuar y agendar mi evaluación</button>
+          <div class="priv">🔒 Tus datos están seguros. No los compartimos con terceros.</div>
+          <button class="qback" onclick="prevStep()">← Atrás</button>
         </div>
-    </footer>
 
-    <!-- WhatsApp flotante -->
-    <a href="https://wa.me/17875070107" class="fixed bottom-20 right-6 z-50 bg-green-500 hover:bg-green-600 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg transition duration-300 md:bottom-6">
-        <i class="fab fa-whatsapp text-2xl"></i>
-    </a>
+        <!-- SCHEDULE -->
+        <div class="qstep" data-step="6">
+          <div class="qresult">
+            <div class="rcheck">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><path d="M7 3v3M17 3v3M4 9h16M6 5h12a2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V7a2 2 0 012-2z" stroke="#15803D" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 14l2 2 4-5" stroke="#15803D" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Tu hogar parece calificar preliminarmente.</h3>
+            <p>Selecciona la fecha y hora para tu evaluación gratuita.</p>
+            <div class="calendly-box" id="calendlyMount">
+              <div class="calendly-placeholder">El calendario aparecerá aquí cuando configures <b>CALENDLY_URL</b>.</div>
+            </div>
+            <div class="schedule-actions">
+              <a href="#" id="calendlyOpen" class="btn-secondary disabled" target="_blank" rel="noopener" onclick="return openCalendlyExternal()">Abrir calendario</a>
+              <button class="btn-secondary" id="manualBooked" onclick="confirmAppointmentBooked('manual_confirm')">Ya agendé mi cita</button>
+            </div>
+            <p class="schedule-note">Al agendar, te preguntaremos si prefieres tu evaluación virtual o presencial.</p>
+            <button class="qback" onclick="showStep(5)">← Editar mis datos</button>
+          </div>
+        </div>
 
-    <!-- Scripts -->
-    <script>
-        // Navegación suave
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-        
-        // Mensaje de confirmación después de enviar formulario
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            // No prevenimos el envío del formulario para que Formspree lo procese
-            // Solo mostramos un mensaje de confirmación
-            setTimeout(function() {
-                alert('¡Gracias por tu interés! Un especialista se pondrá en contacto contigo en menos de 24 horas.');
-            }, 500);
-        });
-        
-        document.getElementById('mobile-form').addEventListener('submit', function(e) {
-            // No prevenimos el envío del formulario para que Formspree lo procese
-            // Solo mostramos un mensaje de confirmación
-            setTimeout(function() {
-                alert('¡Gracias por tu interés! Un especialista se pondrá en contacto contigo en menos de 24 horas.');
-            }, 500);
-        });
-    </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9686e3acb0fda569',t:'MTc1NDA2NzYwMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+        <!-- MEETING TYPE -->
+        <div class="qstep" data-step="7">
+          <div class="qresult">
+            <div class="rcheck">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#15803D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Tu evaluación quedó agendada.</h3>
+            <p>¿Cómo prefieres hacer tu consulta gratuita?</p>
+            <div class="opts">
+              <button class="opt" onclick="chooseMeetingType('virtual')"><span class="ic">💻</span> Virtual <span class="sub">Por videollamada o llamada telefónica</span></button>
+              <button class="opt" onclick="chooseMeetingType('presencial')"><span class="ic">🏠</span> Presencial <span class="sub">Un asesor coordina contigo la visita</span></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- APPOINTMENT CONFIRMED -->
+        <div class="qstep" data-step="9">
+          <div class="qresult">
+            <div class="rcheck">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#15803D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 id="meetingTitle">Perfecto. Ya tenemos tu preferencia.</h3>
+            <p>Para aprovechar mejor tu consulta, puedes enviarnos tu factura de LUMA por WhatsApp.</p>
+            <a href="#" id="waLink" class="wa-btn wa-support" onclick="return trackWhatsAppClick('appointment_booked')">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1012 2zm0 18a8 8 0 01-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1112 20zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 01-3.2-2.8c-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4l-.8-1.9c-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.8.8-.8 2 0 3.2a9 9 0 003.4 3c2 .9 2 .6 2.4.6.6 0 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1z"/></svg>
+              Enviar factura por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- DISQUALIFY (soft) -->
+        <div class="qstep" data-step="8">
+          <div class="qresult warn">
+            <div class="rcheck">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M12 8v5M12 16.5v.01" stroke="#D96A12" stroke-width="2.5" stroke-linecap="round"/><circle cx="12" cy="12" r="9.2" stroke="#D96A12" stroke-width="2"/></svg>
+            </div>
+            <h3 id="dqTitle">Aún podemos ayudarte.</h3>
+            <p id="dqMsg">Con la información que nos diste, este programa específico puede no aplicar hoy — pero hay otras alternativas. Déjanos tu número y un asesor revisa tu caso sin costo.</p>
+            <a href="#" id="dqWa" class="wa-btn" onclick="return trackWhatsAppClick('soft_disqualify')">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.8 4.9-1.3A10 10 0 1012 2z"/></svg>
+              Hablar con un asesor
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="ey">Simple y sin enredos</div>
+      <h2>De factura que sube a pago que baja, en 3 pasos</h2>
+    </div>
+    <div class="steps">
+      <div class="stepc"><div class="n">1</div><h3>Verifica si calificas</h3><p>Respondes 4 preguntas rápidas. En segundos sabes si tu hogar aplica al Programa de Pago Decreciente.</p></div>
+      <div class="stepc"><div class="n">2</div><h3>Recibe tu evaluación gratis</h3><p>Un asesor de Equity Solar diseña tu sistema y te muestra cómo tu pago disminuye año tras año.</p></div>
+      <div class="stepc"><div class="n">3</div><h3>Instala con técnicos locales</h3><p>Equity Solar maneja permisos, instalación y garantías. Todo local, todo en Puerto Rico.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF / BIG TABLE -->
+<section class="proof">
+  <div class="wrap proof-grid">
+    <div>
+      <h2>La única factura que <span class="hl">baja con el tiempo</span></h2>
+      <p>La mayoría de las compañías solares te hablan de paneles y baterías. Nosotros te hablamos de algo más sencillo: un pago que disminuye aproximadamente cada año, mientras todo lo demás sube.</p>
+      <div class="reframe">No estás añadiendo un gasto nuevo. Estás <b>cambiando un pago que sube por uno que baja</b> — y tu hogar sigue siendo tuyo.</div>
+    </div>
+    <div class="bigtable">
+      <div class="bt-head"><div>Año</div><div>Pago mensual</div></div>
+      <div class="bt-row"><div class="yr">1</div><div class="pay">$225</div></div>
+      <div class="bt-row"><div class="yr">5</div><div class="pay">$216</div></div>
+      <div class="bt-row down"><div class="yr">10</div><div class="pay">$205</div></div>
+      <div class="bt-note">Ejemplo ilustrativo para explicar el concepto de pago decreciente. Tu estimado real se calcula en tu evaluación gratis.</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="ey">Respaldo local</div>
+      <h2>Por qué las familias de PR confían en nosotros</h2>
+    </div>
+    <div class="feat">
+      <div class="fc"><div class="fic">📅</div><h3>Pago decreciente</h3><p>Tu pago baja aproximadamente cada año, no sube.</p></div>
+      <div class="fc"><div class="fic">⚡</div><h3>Instalación rápida</h3><p>Equity Solar maneja permisos e instalación completa.</p></div>
+      <div class="fc"><div class="fic">🔧</div><h3>Técnicos locales</h3><p>Equipo en Puerto Rico, no un call center fuera de la isla.</p></div>
+      <div class="fc"><div class="fic">🛡️</div><h3>Garantías locales</h3><p>Soporte, servicio y reclamaciones atendidos aquí mismo.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ / OBJECTIONS -->
+<section class="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="ey">Antes de decidir</div>
+      <h2>Lo que más nos preguntan</h2>
+    </div>
+    <div class="faq-list">
+      <div class="fitem"><button class="fq" aria-expanded="false" onclick="toggleFaq(this)">¿Esto va a aumentar mis gastos mensuales?<span class="pm">+</span></button><div class="fa"><div>No se trata de añadir un pago encima de LUMA. La idea es sustituir una factura que sube cada año por un pago solar que baja. En tu evaluación gratis te mostramos los números exactos para tu hogar antes de que decidas nada.</div></div></div>
+      <div class="fitem"><button class="fq" aria-expanded="false" onclick="toggleFaq(this)">No entiendo cómo funciona el pago decreciente.<span class="pm">+</span></button><div class="fa"><div>Es sencillo: mientras la electricidad sube cada año, tu pago solar se estructura para disminuir aproximadamente cada año. En la consulta te lo explicamos con tu propia factura en la mano, sin tecnicismos.</div></div></div>
+      <div class="fitem"><button class="fq" aria-expanded="false" onclick="toggleFaq(this)">¿Cómo sé si califico?<span class="pm">+</span></button><div class="fa"><div>El cuestionario de arriba te da una respuesta preliminar en 30 segundos. En general aplica a propietarios con factura de $150 o más y crédito aproximado de 640+. Lo confirmamos contigo sin compromiso.</div></div></div>
+      <div class="fitem"><button class="fq" aria-expanded="false" onclick="toggleFaq(this)">¿Quién hace la instalación y el servicio?<span class="pm">+</span></button><div class="fa"><div>Equity Solar Puerto Rico, nuestro socio instalador. Ellos manejan diseño, permisos, instalación, garantías y servicio postventa — todo con técnicos locales en la isla.</div></div></div>
+      <div class="fitem"><button class="fq" aria-expanded="false" onclick="toggleFaq(this)">¿La evaluación tiene algún costo o compromiso?<span class="pm">+</span></button><div class="fa"><div>Ninguno. La evaluación es gratis y sin obligación. Verificas si calificas, ves tu estimado, y tú decides. Así de simple.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <div class="wrap">
+    <h2>Tu factura no tiene que seguir <span class="hl">subiendo</span></h2>
+    <p>Descubre en 30 segundos si tu hogar califica para un pago que baja cada año.</p>
+    <a href="#calificar" class="btn-primary" onclick="trackCTA('final')">Descubre si calificas hoy <span class="arr">→</span></a>
+    <div class="micro">Evaluación gratis · Sin compromiso · Respuesta inmediata</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div class="foot-brand">
+        <img src="spp-logo-white.png" alt="Solar Power Puerto Rico" class="foot-logo">
+        <div class="foot-ally">
+          <span>En alianza con</span>
+          <img src="equity-logo.png" alt="Equity Solar Puerto Rico" class="foot-seal">
+        </div>
+      </div>
+      <div class="foot-contact">Instalación por Equity Solar PR<br><a href="tel:7875070107">787-507-0107</a></div>
+    </div>
+    <div class="disc">
+      Los ejemplos de pago ($225 / $216 / $205) son ilustrativos y sirven únicamente para explicar el concepto de pago decreciente. Los montos reales dependen del diseño de cada sistema, consumo, ubicación y términos de financiamiento, y se determinan durante la evaluación gratuita. La aprobación de financiamiento está sujeta a verificación de crédito y términos del proveedor. Solar Power Puerto Rico en alianza con Equity Solar Puerto Rico. © 2026 Solar Power Puerto Rico. Todos los derechos reservados.
+    </div>
+  </div>
+</footer>
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky"><a href="#calificar" class="btn-primary" onclick="trackCTA('sticky')">Descubre si calificas →</a></div>
+
+<script>
+/* ============ CONFIG ============ */
+const WEBHOOK_URL = "REEMPLAZAR_CON_TU_WEBHOOK_DE_MAKE"; // Make.com → Follow Up Boss
+const CALENDLY_URL = "https://calendly.com/fsilvestrini-solarpowerpuertorico-evaluacion-solar-gratis";
+const WHATSAPP_NUMBER = "17875070107"; // formato internacional sin +
+const LEAD_SOURCE = "solar_power_pr_pago_decreciente_lp";
+const answers = { owner:"", bill:"", credit:"", town:"", name:"", phone:"", meeting_type:"" };
+let step = 1;
+let scheduleIntentTracked = false;
+let appointmentBookedTracked = false;
+
+/* ============ TRACKING ============ */
+function trackCTA(loc){
+  if(window.fbq) fbq('trackCustom','CTAClick',{location:loc});
+  if(window.gtag) gtag('event','cta_click',{location:loc});
+}
+function trackStep(n){
+  if(window.fbq) fbq('trackCustom','QualStep',{step:n});
+  if(window.gtag) gtag('event','qual_step',{step:n});
+}
+function trackScheduleIntent(loc){
+  if(!scheduleIntentTracked){
+    if(window.fbq) fbq('trackCustom','ScheduleIntent',{location:loc});
+    if(window.gtag) gtag('event','schedule_intent',{location:loc});
+    sendToMake({event_type:'schedule_intent', location:loc});
+    scheduleIntentTracked = true;
+  }
+}
+function trackWhatsAppClick(loc){
+  if(window.fbq) fbq('trackCustom','WhatsAppClick',{location:loc});
+  if(window.gtag) gtag('event','whatsapp_click',{location:loc});
+  sendToMake({event_type:'whatsapp_click', location:loc});
+  return true;
+}
+
+/* ============ FLOW ============ */
+function showStep(n){
+  document.querySelectorAll('.qstep').forEach(s=>s.classList.remove('active'));
+  const el=document.querySelector('.qstep[data-step="'+n+'"]');
+  if(el) el.classList.add('active');
+  const pct = n>=7 ? 100 : Math.min(n,6)/6*100;
+  document.getElementById('bar').style.width = pct+'%';
+  step=n;
+}
+function answer(key,val,btn){
+  answers[key]=val;
+  trackStep(key);
+  // qualification gating
+  if(key==='owner' && val==='no'){ showDisqualify('owner'); return; }
+  if(key==='owner'){ showStep(2); return; }
+  if(key==='bill'){ showStep(3); return; }
+  if(key==='credit'){ showStep(4); return; }
+}
+function prevStep(){
+  if(step===4) showStep(3);
+  else if(step===5) showStep(4);
+  else showStep(step-1);
+}
+function goToCapture(){
+  const t=document.getElementById('town').value.trim();
+  if(!t){ document.getElementById('town').focus(); document.getElementById('town').style.borderColor='var(--red)'; return; }
+  answers.town=t;
+  // soft-disqualify logic: low bill OR uncertain/low credit handled as "other alternatives"
+  if(answers.bill==='low'){
+    showDisqualify('bill'); return;
+  }
+  // qualifies → capture, customize message
+  const title=document.getElementById('capTitle');
+  if(answers.bill==='high'){ title.textContent='¡Excelente! Tu hogar tiene alto potencial de ahorro.'; }
+  showStep(5);
+  trackStep('capture_view');
+  if(window.fbq) fbq('trackCustom','PrequalComplete',answers);
+}
+function showDisqualify(reason){
+  const msg=document.getElementById('dqMsg');
+  if(reason==='owner'){ msg.textContent='El Programa de Pago Decreciente aplica solo a propietarios de vivienda. Si planeas comprar o conoces a alguien que sea dueño, con gusto le ayudamos.'; }
+  if(reason==='bill'){ msg.textContent='Con una factura menor a $150, el ahorro puede ser más limitado — pero un asesor puede revisar tu caso y otras alternativas sin costo.'; }
+  buildWa(true);
+  showStep(8);
+  if(window.gtag) gtag('event','soft_disqualify',{reason:reason});
+}
+
+/* ============ SUBMIT ============ */
+async function submitLead(){
+  const name=document.getElementById('name').value.trim();
+  const phone=document.getElementById('phone').value.trim();
+  if(!name){ flag('name'); return; }
+  if(phone.replace(/\D/g,'').length<7){ flag('phone'); return; }
+  answers.name=name; answers.phone=phone;
+
+  const btn=document.getElementById('finalSubmit');
+  btn.disabled=true; btn.textContent='Preparando calendario...';
+
+  const payload=basePayload({
+    event_type:'lead_captured',
+    nombre:name,
+    telefono:phone,
+    pueblo:answers.town,
+    propietario:answers.owner,
+    factura:answers.bill,
+    credito:answers.credit,
+    source:LEAD_SOURCE
+  });
+
+  // Meta + GA conversion events
+  if(window.fbq){ fbq('track','Lead',{content_name:'Solar Prequal Lead'}); }
+  if(window.gtag){ gtag('event','generate_lead',{value:1,currency:'USD'}); }
+
+  await sendToMake(payload);
+
+  buildWa(false);
+  showStep(6);
+  renderCalendly();
+  trackScheduleIntent('calendar_view');
+}
+function flag(id){const el=document.getElementById(id);el.style.borderColor='var(--red)';el.focus();}
+function basePayload(extra){
+  const params = new URLSearchParams(window.location.search);
+  return Object.assign({
+    source:LEAD_SOURCE,
+    fecha:new Date().toISOString(),
+    page_url:window.location.href,
+    referrer:document.referrer || '',
+    utm_source:params.get('utm_source') || '',
+    utm_medium:params.get('utm_medium') || '',
+    utm_campaign:params.get('utm_campaign') || '',
+    utm_content:params.get('utm_content') || '',
+    utm_term:params.get('utm_term') || '',
+    nombre:answers.name,
+    telefono:answers.phone,
+    pueblo:answers.town,
+    propietario:answers.owner,
+    factura:answers.bill,
+    credito:answers.credit,
+    modalidad:answers.meeting_type
+  }, extra || {});
+}
+async function sendToMake(payload){
+  try{
+    if(WEBHOOK_URL && !WEBHOOK_URL.startsWith('REEMPLAZAR')){
+      await fetch(WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(basePayload(payload))});
+    }
+  }catch(e){ /* fail silently so the funnel can continue */ }
+}
+function buildWa(isDq){
+  const n=answers.name||'';
+  const t=answers.town||'';
+  const modality=answers.meeting_type ? ` Prefiero la evaluación ${answers.meeting_type}.` : '';
+  const text=encodeURIComponent(`Hola, soy ${n} de ${t}. Ya completé el formulario de Solar Power PR.${modality} Quiero enviar mi factura de LUMA para la evaluación del Programa de Pago Decreciente.`);
+  const url=`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+  if(isDq) document.getElementById('dqWa').href=url;
+  else document.getElementById('waLink').href=url;
+}
+function calendlyReady(){
+  return CALENDLY_URL && !CALENDLY_URL.startsWith('REEMPLAZAR');
+}
+function getCalendlyUrl(){
+  if(!calendlyReady()) return '';
+  const sep = CALENDLY_URL.includes('?') ? '&' : '?';
+  const params = new URLSearchParams({
+    name:answers.name,
+    a1:answers.phone,
+    a2:answers.town,
+    hide_gdpr_banner:'1',
+    primary_color:'22C55E'
+  });
+  return CALENDLY_URL + sep + params.toString();
+}
+function renderCalendly(){
+  const mount=document.getElementById('calendlyMount');
+  const open=document.getElementById('calendlyOpen');
+  const url=getCalendlyUrl();
+  if(!url){
+    mount.innerHTML='<div class="calendly-placeholder">Reemplaza <b>CALENDLY_URL</b> con tu enlace de Calendly para activar la agenda.</div>';
+    open.classList.add('disabled');
+    open.href='#';
+    return;
+  }
+  mount.innerHTML=`<iframe class="calendly-frame" src="${url}" title="Agenda tu evaluación gratuita con Solar Power Puerto Rico"></iframe>`;
+  open.href=url;
+  open.classList.remove('disabled');
+}
+function openCalendlyExternal(){
+  if(!calendlyReady()) return false;
+  trackScheduleIntent('open_calendly');
+  return true;
+}
+function confirmAppointmentBooked(method, calendlyPayload){
+  if(appointmentBookedTracked) return;
+  appointmentBookedTracked = true;
+  if(window.fbq) fbq('trackCustom','AppointmentBooked',{method:method});
+  if(window.gtag) gtag('event','appointment_booked',{method:method});
+  sendToMake({
+    event_type:'appointment_booked',
+    appointment_method:method,
+    calendly_payload:calendlyPayload || null
+  });
+  buildWa(false);
+  showStep(7);
+}
+function chooseMeetingType(type){
+  answers.meeting_type = type;
+  const label = type === 'presencial' ? 'presencial' : 'virtual';
+  const title = document.getElementById('meetingTitle');
+  if(title) title.textContent = `Perfecto. Tu evaluación será ${label}.`;
+  if(window.fbq) fbq('trackCustom','MeetingTypeSelected',{meeting_type:type});
+  if(window.gtag) gtag('event','meeting_type_selected',{meeting_type:type});
+  sendToMake({
+    event_type:'meeting_type_selected',
+    meeting_type:type
+  });
+  buildWa(false);
+  showStep(9);
+}
+function isCalendlyEvent(e){
+  return e.origin === 'https://calendly.com' && e.data && e.data.event && e.data.event.indexOf('calendly.') === 0;
+}
+window.addEventListener('message',function(e){
+  if(isCalendlyEvent(e) && e.data.event === 'calendly.event_scheduled'){
+    confirmAppointmentBooked('calendly_embed', e.data.payload);
+  }
+});
+
+/* ============ FAQ ============ */
+function toggleFaq(btn){
+  const open=btn.getAttribute('aria-expanded')==='true';
+  btn.setAttribute('aria-expanded',!open);
+  const fa=btn.nextElementSibling;
+  fa.style.maxHeight=open?null:fa.scrollHeight+'px';
+}
+
+/* reset input border on type */
+document.addEventListener('input',e=>{if(e.target.tagName==='INPUT')e.target.style.borderColor='';});
+</script>
+</body>
 </html>
