@@ -120,27 +120,11 @@ header{background:var(--white);border-bottom:1px solid var(--line);position:stic
 .btn-primary .arr{transition:.2s}
 .btn-primary:hover .arr{transform:translateX(4px)}
 .hero-micro{font-size:13px;color:var(--muted);margin-top:14px;display:flex;align-items:center;gap:7px}
+.hero-visual{display:grid;gap:16px;justify-items:center}
+.hero-video{width:min(100%,360px);background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow-sm);overflow:hidden}
+.hero-video video{width:100%;aspect-ratio:9/16;object-fit:contain;background:#000}
+.video-caption{font-size:13px;color:var(--muted);font-weight:700;text-align:center;padding:10px 14px;font-family:'Poppins'}
 
-/* compare card in hero */
-.compare{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:26px 24px}
-.compare h4{font-family:'Poppins';font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);text-align:center;margin-bottom:18px}
-.cmp-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px}
-.cmp{border-radius:14px;padding:16px 14px;text-align:center}
-.cmp.luma{background:#FBEDEC;border:1px solid #F2C9C5}
-.cmp.solar{background:#E7F1E8;border:1px solid #BFE0C5}
-.cmp .lbl{font-family:'Poppins';font-weight:700;font-size:13px;letter-spacing:.03em;text-transform:uppercase}
-.cmp.luma .lbl{color:var(--red)}
-.cmp.solar .lbl{color:var(--green-d)}
-.cmp .ar{font-size:30px;font-weight:800;margin:6px 0 2px;font-family:'Poppins'}
-.cmp.luma .ar{color:var(--red)}
-.cmp.solar .ar{color:var(--green)}
-.cmp .t{font-size:12.5px;color:var(--muted)}
-.table-mini{border-top:1px dashed var(--line);padding-top:16px}
-.tm-row{display:grid;grid-template-columns:1fr auto;align-items:center;padding:7px 0;font-size:15px}
-.tm-row .yr{color:var(--muted);font-weight:600}
-.tm-row .pay{font-family:'Poppins';font-weight:800;color:var(--navy);font-size:19px}
-.tm-row.lastr .pay{color:var(--green)}
-.tm-note{font-size:11.5px;color:var(--muted);text-align:center;margin-top:10px;font-style:italic}
 @media(max-width:860px){.hero-grid{grid-template-columns:1fr;gap:32px}.hero{padding:36px 0 20px}}
 
 /* ===== LOGO STRIP ===== */
@@ -315,25 +299,10 @@ footer{background:#0a1f37;color:#8aa3bf;padding:34px 0;font-size:13px}
       </div>
       <div class="hero-micro">✓ Toma 30 segundos · ✓ No afecta tu crédito · ✓ Respuesta inmediata</div>
     </div>
-    <div class="compare">
-      <h4>Dos facturas, dos caminos</h4>
-      <div class="cmp-row">
-        <div class="cmp luma">
-          <div class="lbl">Factura LUMA</div>
-          <div class="ar">↗</div>
-          <div class="t">Sube cada año</div>
-        </div>
-        <div class="cmp solar">
-          <div class="lbl">Tu pago solar</div>
-          <div class="ar">↘</div>
-          <div class="t">Baja cada año</div>
-        </div>
-      </div>
-      <div class="table-mini">
-        <div class="tm-row"><span class="yr">Año 1</span><span class="pay">$225</span></div>
-        <div class="tm-row"><span class="yr">Año 5</span><span class="pay">$216</span></div>
-        <div class="tm-row lastr"><span class="yr">Año 10</span><span class="pay">$205</span></div>
-        <div class="tm-note">Ejemplo ilustrativo del concepto de pago decreciente.</div>
+    <div class="hero-visual">
+      <div class="hero-video">
+        <video src="equity-solar-video.mp4" autoplay muted playsinline controls preload="auto" aria-label="Video de Solar Power Puerto Rico y Equity Solar Puerto Rico"></video>
+        <div class="video-caption">Respaldo local de Equity Solar Puerto Rico</div>
       </div>
     </div>
   </div>
