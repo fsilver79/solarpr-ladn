@@ -126,6 +126,16 @@ header{background:var(--white);border-bottom:1px solid var(--line);position:stic
 .video-caption{font-size:13px;color:var(--muted);font-weight:700;text-align:center;padding:10px 14px;font-family:'Poppins'}
 
 @media(max-width:860px){.hero-grid{grid-template-columns:1fr;gap:32px}.hero{padding:36px 0 20px}}
+@media(max-width:760px){
+  .hero-grid{display:flex;flex-direction:column}
+  .hero-copy{display:contents}
+  .hero-visual{order:2;width:100%}
+  .hero-ctas{order:3;width:100%;justify-content:center}
+  .hero-micro{order:4;justify-content:center;text-align:center;flex-wrap:wrap;line-height:1.45}
+  .hero-copy .eyebrow{order:0;align-self:flex-start}
+  .hero-copy h1{order:0}
+  .hero-copy .sub{order:1}
+}
 
 /* ===== LOGO STRIP ===== */
 .strip{background:var(--navy);color:#cfe0f2;padding:18px 0}
@@ -254,10 +264,16 @@ footer{background:#0a1f37;color:#8aa3bf;padding:34px 0;font-size:13px}
 @media(max-width:560px){.foot{flex-direction:column;align-items:flex-start;gap:18px}.foot-contact{text-align:left}.foot-ally{padding-left:0;border-left:none}.foot-seal{height:68px;width:68px}}
 .disc{max-width:1080px;margin:18px auto 0;padding:16px 22px 0;border-top:1px solid rgba(255,255,255,.08);font-size:11.5px;line-height:1.6;color:#6a839e}
 
+/* floating WhatsApp CTA */
+.whatsapp-float{position:fixed;right:22px;bottom:22px;z-index:9999;background:#25D366;color:#fff;padding:14px 18px;border-radius:999px;font-family:'Poppins',sans-serif;font-size:15px;font-weight:700;text-decoration:none;box-shadow:0 10px 25px rgba(0,0,0,.22);display:flex;align-items:center;gap:8px;transition:transform .2s ease,box-shadow .2s ease}
+.whatsapp-float:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(0,0,0,.28)}
+.whatsapp-icon{font-size:18px;line-height:1}
+
 /* sticky mobile CTA */
 .sticky{display:none;position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);padding:11px 16px;z-index:60;box-shadow:0 -4px 20px rgba(0,0,0,.08)}
 .sticky .btn-primary{width:100%;justify-content:center;font-size:16px;padding:14px}
-@media(max-width:760px){.sticky{display:block}body{padding-bottom:74px}}
+@media(max-width:760px){.sticky{display:block}body{padding-bottom:140px}}
+@media(max-width:768px){.whatsapp-float{left:16px;right:16px;bottom:86px;justify-content:center;padding:15px 18px;font-size:16px}}
 @media(max-width:560px){
   .wrap{padding:0 16px}
   .qinner{padding:28px 18px 24px}
@@ -290,7 +306,7 @@ footer{background:#0a1f37;color:#8aa3bf;padding:34px 0;font-size:13px}
 <!-- HERO -->
 <section class="hero">
   <div class="wrap hero-grid">
-    <div>
+    <div class="hero-copy">
       <div class="eyebrow"><span class="dot"></span>Evaluación gratis · Sin compromiso</div>
       <h1>¿Cuándo fue la última vez que una factura<span class="hl">bajó por sí sola?</span></h1>
       <p class="sub">Mientras la factura de LUMA sigue subiendo, hay un pago que hace lo contrario. Con tu sistema solar, <b>tu pago disminuye cada año.</b></p>
@@ -524,7 +540,7 @@ footer{background:#0a1f37;color:#8aa3bf;padding:34px 0;font-size:13px}
     <div class="faq-list">
       <div class="fitem"><button class="fq" aria-expanded="false" onclick="toggleFaq(this)">¿Esto va a aumentar mis gastos mensuales?<span class="pm">+</span></button><div class="fa"><div>No se trata de añadir un pago encima de LUMA. La idea es sustituir una factura que sube cada año por un pago solar que baja. En tu evaluación gratis te mostramos los números exactos para tu hogar antes de que decidas nada.</div></div></div>
       <div class="fitem"><button class="fq" aria-expanded="false" onclick="toggleFaq(this)">No entiendo cómo funciona el pago decreciente.<span class="pm">+</span></button><div class="fa"><div>Es sencillo: mientras la electricidad sube cada año, tu pago solar se estructura para disminuir aproximadamente cada año. En la consulta te lo explicamos con tu propia factura en la mano, sin tecnicismos.</div></div></div>
-      <div class="fitem"><button class="fq" aria-expanded="false" onclick="toggleFaq(this)">¿Cómo sé si califico?<span class="pm">+</span></button><div class="fa"><div>El cuestionario de arriba te da una respuesta preliminar en 30 segundos. En general aplica a propietarios con factura de $150 o más y crédito aproximado de 640+. Lo confirmamos contigo sin compromiso.</div></div></div>
+      <div class="fitem"><button class="fq" aria-expanded="false" onclick="toggleFaq(this)">¿Cómo sé si califico?<span class="pm">+</span></button><div class="fa"><div>El cuestionario de arriba te da una respuesta preliminar en 30 segundos. En general aplica a propietarios con factura de $150 o más. En la evaluación gratis confirmamos los detalles contigo sin compromiso.</div></div></div>
       <div class="fitem"><button class="fq" aria-expanded="false" onclick="toggleFaq(this)">¿Quién hace la instalación y el servicio?<span class="pm">+</span></button><div class="fa"><div>Equity Solar Puerto Rico, nuestro socio instalador. Ellos manejan diseño, permisos, instalación, garantías y servicio postventa — todo con técnicos locales en la isla.</div></div></div>
       <div class="fitem"><button class="fq" aria-expanded="false" onclick="toggleFaq(this)">¿La evaluación tiene algún costo o compromiso?<span class="pm">+</span></button><div class="fa"><div>Ninguno. La evaluación es gratis y sin obligación. Verificas si calificas, ves tu estimado, y tú decides. Así de simple.</div></div></div>
     </div>
@@ -554,10 +570,15 @@ footer{background:#0a1f37;color:#8aa3bf;padding:34px 0;font-size:13px}
       <div class="foot-contact">Instalación por Equity Solar PR<br><a href="tel:7875070107">787-507-0107</a></div>
     </div>
     <div class="disc">
-      Los ejemplos de pago ($225 / $216 / $205) son ilustrativos y sirven únicamente para explicar el concepto de pago decreciente. Los montos reales dependen del diseño de cada sistema, consumo, ubicación y términos de financiamiento, y se determinan durante la evaluación gratuita. La aprobación de financiamiento está sujeta a verificación de crédito y términos del proveedor. Solar Power Puerto Rico en alianza con Equity Solar Puerto Rico. © 2026 Solar Power Puerto Rico. Todos los derechos reservados.
+      Los ejemplos de pago ($225 / $216 / $205) son ilustrativos y sirven únicamente para explicar el concepto de pago decreciente. Los montos reales dependen del diseño de cada sistema, consumo, ubicación y términos de financiamiento, y se determinan durante la evaluación gratuita. La aprobación final está sujeta a los términos del proveedor correspondiente. Solar Power Puerto Rico en alianza con Equity Solar Puerto Rico. © 2026 Solar Power Puerto Rico. Todos los derechos reservados.
     </div>
   </div>
 </footer>
+
+<a href="https://wa.me/17875070107?text=Hola%2C%20quiero%20enviar%20mi%20factura%20de%20LUMA%20para%20verificar%20si%20cualifico%20para%20el%20programa%20solar%20de%20pago%20decreciente." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Enviar factura de LUMA por WhatsApp" onclick="return trackWhatsAppClick('floating_luma_bill')">
+  <span class="whatsapp-icon">💬</span>
+  <span>Enviar factura de LUMA</span>
+</a>
 
 <!-- STICKY MOBILE CTA -->
 <div class="sticky"><a href="#calificar" class="btn-primary" onclick="trackCTA('sticky')">Descubre si calificas →</a></div>
@@ -624,7 +645,7 @@ function goToCapture(){
   const t=document.getElementById('town').value.trim();
   if(!t){ document.getElementById('town').focus(); document.getElementById('town').style.borderColor='var(--red)'; return; }
   answers.town=t;
-  // soft-disqualify logic: low bill OR uncertain/low credit handled as "other alternatives"
+  // soft-disqualify logic: low bill handled as "other alternatives"
   if(answers.bill==='low'){
     showDisqualify('bill'); return;
   }
