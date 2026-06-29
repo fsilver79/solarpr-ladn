@@ -583,6 +583,7 @@ footer{background:#0a1f37;color:#8aa3bf;padding:34px 0;font-size:13px}
 <script>
 /* ============ CONFIG ============ */
 const WEBHOOK_URL = "REEMPLAZAR_CON_TU_WEBHOOK_DE_MAKE"; // Make.com → Follow Up Boss
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xeozzdoe";
 const CALENDLY_URL = "https://calendly.com/fsilvestrini-solarpowerpuertorico-evaluacion-solar-gratis";
 const WHATSAPP_NUMBER = "17875070107"; // formato internacional sin +
 const LEAD_SOURCE = "solar_power_pr_pago_decreciente_lp";
@@ -688,6 +689,7 @@ async function submitLead(){
   if(window.fbq){ fbq('track','Lead',{content_name:'Solar Prequal Lead'}); }
   if(window.gtag){ gtag('event','generate_lead',{value:1,currency:'USD'}); }
 
+  await sendToFormspree(payload);
   await sendToMake(payload);
 
   buildWa(false);
@@ -716,6 +718,29 @@ function basePayload(extra){
     credito:answers.credit,
     modalidad:answers.meeting_type
   }, extra || {});
+}
+async function sendToFormspree(payload){
+  try{
+    if(!FORMSPREE_ENDPOINT){
+      console.error("Formspree endpoint is missing");
+      return;
+    }
+
+    const response = await fetch(FORMSPREE_ENDPOINT, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify(payload)
+    });
+
+    if(!response.ok){
+      console.error("Formspree error:", await response.text());
+    }
+  }catch(error){
+    console.error("Formspree submission failed:", error);
+  }
 }
 async function sendToMake(payload){
   try{
